@@ -2,6 +2,43 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+ext {
+    bintrayRepo = 'maven' // Name of the Bintray repo you created
+    bintrayName = 'com.bluecrunch.bluecrunchverification' // Bintray package name
+
+    publishedGroupId = 'com.bluecrunch' // Group ID of the SDK which will be added in implementation line of gradle
+    artifact = 'verification' // Artifact ID of the SDK which will be added in implementation line of gradle
+    libraryVersion = '0.0.1' // Version of the library you created in Bintray
+
+    libraryName = 'bluecrunchverification' // It is generally the module name
+    libraryDescription = 'Verification module to use Firebase /Server APIs for SMS send/verify in your app.' // Small description of the library
+
+    siteUrl = 'https://bitbucket.org/bluecrunch/sms-android'
+    gitUrl = 'https://bitbucket.org/bluecrunch/sms-android.git'
+
+    developerId = 'karim2016'
+    developerName = 'Karim Abdelhameed'
+    developerEmail = 'info@bluecrunch.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+    //Bintray Credentials
+//    Properties properties = new Properties()
+//    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//
+//    bintrayUsername = properties.getProperty('BINTRAY_USERNAME')
+//    bintrayUserOrg = properties.getProperty('BINTRAY_ORG')
+//    bintrayApiKey = properties.getProperty('BINTRAY_API_KEY')
+//
+    bintrayUsername = 'karim2016'
+    bintrayUserOrg = 'bluecrunch'
+    bintrayApiKey = 'e063410f6105c85a2d2fd2a2cd095c0b70a9da3c'
+}
 
 android {
     compileSdkVersion 29
@@ -19,9 +56,13 @@ android {
     }
 
     buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     dataBinding {
@@ -66,3 +107,5 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.google.code.gson:gson:2.8.5'
 }
+apply from: 'bintray.script'
+
