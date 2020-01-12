@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "203798324101",
+    "firebase_url": "https://verification-772fd.firebaseio.com",
+    "project_id": "verification-772fd",
+    "storage_bucket": "verification-772fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203798324101:android:dae1d1a30db2875aed5aec",
+        "android_client_info": {
+          "package_name": "com.bluecrunch.verification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203798324101-t3iiidfoj8a1pff4itghab0i6p7mjun7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSKrd8v0WBUN8u2XFLJY6wHDr70B4DhIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203798324101-t3iiidfoj8a1pff4itghab0i6p7mjun7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
