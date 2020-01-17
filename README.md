@@ -79,16 +79,16 @@ integration =
 and if you are using <strong>Server APIs</strong> : 
 <pre>
 <code>
-          integration =
-                Integration
-                    .Builder()
-                    .setContext(this)
-                    .setIsFirebase(false)
-                    .setIsSendMethodGet(false)
-                    .setSendRequestBody(request body as JsonObject) // if it is a @POST method .
-                    .setWebserviceCallBack(this)
-                    .setSendRequestURL("web server url with end point here") // https://IP/sendSMS/ {params} . if using @GET
-                    .build()
+integration =
+      Integration
+          .Builder()
+          .setContext(this)
+          .setIsFirebase(false)
+          .setIsSendMethodGet(false)
+          .setSendRequestBody(request body as JsonObject) // if it is a @POST method .
+          .setWebserviceCallBack(this)
+          .setSendRequestURL("web server url with end point here") // https://IP/sendSMS/ {params} . if using @GET
+          .build()
 </code>
 </pre>
 
