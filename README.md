@@ -107,8 +107,8 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 </pre>
 
 # Special thanks 
-@Shrio. and
-To all <a href='https://www.bluecrunch.com/'>Bluecrunch</a> team specially the mobile team 💪🏻.
+@Shrio , and
+to all <a href='https://www.bluecrunch.com/'>Bluecrunch</a> team specially the mobile team 💪🏻.
 
 # Licence 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of at:
