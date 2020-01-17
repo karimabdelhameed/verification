@@ -92,6 +92,14 @@ integration =
 </code>
 </pre>
 
+Finally , you just need to call send SMS or verify SMS methods : 
+<pre>
+<code>
+ integration.sendFCMSms() 
+ // Or
+ integration.sendSMSPOST()
+</code>
+</pre>
 
 
 
