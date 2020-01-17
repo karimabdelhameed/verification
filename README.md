@@ -14,6 +14,10 @@ So , we made verification module✌🏽to help you in that silly work.
 <li>Verify SMS using firebase.</li>
 <li>Send SMS using server APIs (Get or post).</li>
 <li>Verify SMS using server APIs (Get or post).</li>
+<li>Control number of SMS verification digits (4,5 or 6).</li>
+<li>Control box background (i.e. custom bg like rounded box or line ,...).</li>
+<li>Control digit box size & spaces.</li>
+<li>Control digit box height & text color.</li>
 
 # Download 
 
