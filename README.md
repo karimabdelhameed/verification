@@ -107,7 +107,7 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 </pre>
 
 # Special thanks 
-@Shrio , and
+@sherifMohammed95 , and
 to all <a href='https://www.bluecrunch.com/'>Bluecrunch</a> team specially the mobile team 💪🏻.
 
 # Licence 
