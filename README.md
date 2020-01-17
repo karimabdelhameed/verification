@@ -59,7 +59,7 @@ You need to use the widget first in the XML layout of your verification layout.
 In your activity, just make a lateinit var from class called Integration like this :
 <pre><code>private lateinit var integration : Integration</code></pre>
 
-after that you need to build your integration object using builder pattern 🤠like this: 
+after that you need to build your integration object using builder pattern 🤠 like this: 
 
 if you are using <strong>Firebase</strong> : 
 <pre>
@@ -85,9 +85,14 @@ integration =
           .setContext(this)
           .setIsFirebase(false)
           .setIsSendMethodGet(false)
-          .setSendRequestBody(request body as JsonObject) // if it is a @POST method .
+          .setSendRequestBody("request body as JsonObject") // if it is a @POST method .
+           // Sample for <strong>@POST</strong> request
+           // val mRequest = JsonObject()
+           // mRequest.addProperty("mobile", "00000000000")
           .setWebserviceCallBack(this)
           .setSendRequestURL("web server url with end point here") // https://IP/sendSMS/ {params} . if using @GET
+          // Sample for <strong>@GET</strong> request in the url 
+          // https://IP/sendSMS/mobile=0000000000
           .build()
 </code>
 </pre>
@@ -102,10 +107,10 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 </pre>
 
 # Special thanks 
+@Shrio. and
 To all <a href='https://www.bluecrunch.com/'>Bluecrunch</a> team specially the mobile team 💪🏻.
 
 # Licence 
-Copyright 2020 Karim abdelhameed.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of at:
 <a href='https://opensource.org/licenses/apache2.0.php'>https://opensource.org/licenses/apache2.0.php</a>
 
