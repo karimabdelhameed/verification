@@ -20,7 +20,6 @@ So , we made verification module✌🏽to help you in that silly work.
 <li>Control digit box height & text color.</li>
 
 # Download 
-
 Maven
 <pre>
 <code>
@@ -37,6 +36,27 @@ Gradle
 implementation 'com.bluecrunch:bluecrunchverification:0.0.4'
 </code>
 </pre>
+
+# Usage
+You need to use the widget first in the XML layout of your verification layout.
+<pre>
+<code>
+  <com.bluecrunch.bluecrunchverification.VerificationView
+            android:id="@+id/verification_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            app:box_count="6"
+            app:box_height="50dp"
+            app:box_background="@drawable/line_shape"
+            app:box_text_color="@color/colorAccent"
+            app:box_space="7dp"
+            app:layout_constraintTop_toTopOf="parent" />
+</code>
+</pre>
+
 
 
 
