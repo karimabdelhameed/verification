@@ -30,7 +30,7 @@ Maven
 Gradle
 <pre>
 <code>
-compile 'com.bluecrunch:bluecrunchverification:0.0.4'
+implementation 'com.bluecrunch:bluecrunchverification:0.0.4'
 </code>
 </pre>
 
