@@ -15,7 +15,6 @@ open class VerificationView : ConstraintLayout {
 
     private var mContext: Context? = null
 
-    //    private var binding: VerificationViewBinding? = null
     var boxCount = 4
     var boxBG = 0
     var boxHeight = 0f

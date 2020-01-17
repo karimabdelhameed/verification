@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bluecrunch.bluecrunchverification.FCMCallBack
 import com.bluecrunch.bluecrunchverification.Integration
 import com.bluecrunch.bluecrunchverification.WebServiceCallBack
+import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.ResponseBody
 
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        sendSMSAPI()
+        sendCodeFCM()
+        verifyCodeFCM()
     }
 
     private fun sendCodeFCM() {
@@ -29,16 +31,16 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
                     .setIsFirebase(true)
                     .setCountryCode("+2")
                     .setFCMCallBack(this)
-                    .setMobileNumber("01000290477")
+                    .setMobileNumber("01001939963")
                     .build()
             integration.sendFCMSms()
         }
     }
 
     private fun sendSMSAPI(){
-        val mRequest = TestSMSRequest()
-        mRequest.to = "201005140750"
-        mRequest.message = "Hello , This is a test SMS!"
+        val mRequest = JsonObject()
+        mRequest.addProperty("to", "201005140750")
+        mRequest.addProperty("message", "Test test")
         send_button.setOnClickListener {
             integration =
                 Integration

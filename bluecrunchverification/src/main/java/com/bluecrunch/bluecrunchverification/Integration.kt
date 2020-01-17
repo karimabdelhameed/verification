@@ -6,6 +6,7 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.gson.JsonObject
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,8 +27,8 @@ open class Integration private constructor(
     private var verifyRequestURL = ""
     private var fcmCallBack: FCMCallBack?
     private var webServiceCallBack: WebServiceCallBack?
-    private var sendRequestBody = SendSMSRequest()
-    private var verifyRequestBody = VerifySMSRequest()
+    private var sendRequestBody = JsonObject()
+    private var verifyRequestBody = JsonObject()
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private var verificationID = ""
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -102,7 +103,7 @@ open class Integration private constructor(
                     if (fcmCallBack != null) {
                         fcmCallBack?.onFCMVerifiedSuccess()
                     }
-                    FirebaseAuth.getInstance().signOut()
+                   // FirebaseAuth.getInstance().signOut()
                 } catch (ex: Exception) {
                     if (fcmCallBack != null) {
                         fcmCallBack?.onFCMError(ex.localizedMessage!!)
@@ -230,9 +231,9 @@ open class Integration private constructor(
             private set
         var context = FragmentActivity()
             private set
-        var sendRequestBody = SendSMSRequest()
+        var sendRequestBody = JsonObject()
             private set
-        var verifyRequestBody = VerifySMSRequest()
+        var verifyRequestBody = JsonObject()
             private set
 
         var fcmCallBack: FCMCallBack? = null
@@ -268,11 +269,11 @@ open class Integration private constructor(
             this.verifyRequestURL = verifyRequestURL
         }
 
-        fun setSendRequestBody(sendRequestBody: SendSMSRequest) = apply {
+        fun setSendRequestBody(sendRequestBody: JsonObject) = apply {
             this.sendRequestBody = sendRequestBody
         }
 
-        fun setVerifyRequestBody(verifyRequestBody: VerifySMSRequest) = apply {
+        fun setVerifyRequestBody(verifyRequestBody: JsonObject) = apply {
             this.verifyRequestBody = verifyRequestBody
         }
 

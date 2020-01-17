@@ -1,13 +1,17 @@
 package com.bluecrunch.bluecrunchverification
 
 import android.util.Log
+import com.google.gson.JsonObject
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Url
 import java.util.concurrent.TimeUnit
 
 interface WebService {
@@ -36,15 +40,14 @@ interface WebService {
     @GET
     fun sendSMSGET(@Url url: String): Call<ResponseBody>
 
-    @Headers("Content-Type:application/json")
     @POST
-    fun sendSMSPOST(@Url url: String, @Body request: SendSMSRequest): Call<ResponseBody>
+    fun sendSMSPOST(@Url url: String, @Body request: JsonObject): Call<ResponseBody>
 
 
     @GET
     fun verifySMSGET(@Url url: String): Call<ResponseBody>
 
     @POST
-    fun verifySMSPOST(@Url url: String, @Body request: VerifySMSRequest): Call<ResponseBody>
+    fun verifySMSPOST(@Url url: String, @Body request: JsonObject): Call<ResponseBody>
 
 }
