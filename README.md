@@ -41,7 +41,7 @@ implementation 'com.bluecrunch:bluecrunchverification:0.0.4'
 You need to use the widget first in the XML layout of your verification layout.
 <pre>
 <code>
-  <com.bluecrunch.bluecrunchverification.VerificationView
+  &lt;com.bluecrunch.bluecrunchverification.VerificationView
             android:id="@+id/verification_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,7 +53,7 @@ You need to use the widget first in the XML layout of your verification layout.
             app:box_background="@drawable/line_shape"
             app:box_text_color="@color/colorAccent"
             app:box_space="7dp"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" /&lt;
 </code>
 </pre>
 
