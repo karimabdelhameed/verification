@@ -18,7 +18,6 @@ So , we made verification module✌🏽to help you in that silly work.
 # Download 
 
 Maven
-
 <pre>
 <code>
 &lt;dependency&gt;
@@ -28,15 +27,12 @@ Maven
 &lt;/dependency&gt;
 </code>
 </pre>
-
 Gradle
-
 <pre>
 <code>
 compile 'com.bluecrunch:bluecrunchverification:0.0.4'
 </code>
 </pre>
-
 
 
 
