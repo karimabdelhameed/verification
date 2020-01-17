@@ -7,10 +7,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Url
+import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
 interface WebService {
@@ -39,6 +36,7 @@ interface WebService {
     @GET
     fun sendSMSGET(@Url url: String): Call<ResponseBody>
 
+    @Headers("Content-Type:application/json")
     @POST
     fun sendSMSPOST(@Url url: String, @Body request: SendSMSRequest): Call<ResponseBody>
 

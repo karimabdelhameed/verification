@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
 
     private fun sendSMSAPI(){
         val mRequest = TestSMSRequest()
-        mRequest.to = "201000290477"
+        mRequest.to = "201005140750"
         mRequest.message = "Hello , This is a test SMS!"
         send_button.setOnClickListener {
             integration =
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
                     .setContext(this)
                     .setIsFirebase(false)
                     .setCountryCode("+2")
-                    .setMobileNumber("01000290477")
+                    .setMobileNumber("01005140750")
                     .setIsSendMethodGet(false)
                     .setSendRequestBody(mRequest)
                     .setWebserviceCallBack(this)
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
 
     }
 
-    override fun onWebServiceVerifiedSuccess() {
+    override fun onWebServiceVerifiedSuccess(responseBody: ResponseBody?) {
         Log.e("Success : ","API Success")
     }
 

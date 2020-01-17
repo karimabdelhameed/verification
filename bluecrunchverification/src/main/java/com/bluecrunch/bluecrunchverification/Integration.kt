@@ -137,7 +137,7 @@ open class Integration private constructor(
                 if (response != null) {
                     if (webServiceCallBack != null) {
                         if (response.code() == 200) {
-                            webServiceCallBack?.onWebServiceVerifiedSuccess()
+                            webServiceCallBack?.onWebServiceVerifiedSuccess(response.body())
                         } else
                             webServiceCallBack?.onWebServiceFailedWithErrorBody(response.errorBody()!!)
                     }
@@ -158,7 +158,7 @@ open class Integration private constructor(
                 if (response != null) {
                     if (webServiceCallBack != null) {
                         if (response.code() == 200) {
-                            webServiceCallBack?.onWebServiceVerifiedSuccess()
+                            webServiceCallBack?.onWebServiceVerifiedSuccess(response.body())
                         } else
                             webServiceCallBack?.onWebServiceFailedWithErrorBody(response.errorBody()!!)
                     }
@@ -179,7 +179,7 @@ open class Integration private constructor(
                 if (response != null) {
                     if (webServiceCallBack != null) {
                         if (response.code() == 200) {
-                            webServiceCallBack?.onWebServiceVerifiedSuccess()
+                            webServiceCallBack?.onWebServiceVerifiedSuccess(response.body())
                         } else
                             webServiceCallBack?.onWebServiceFailedWithErrorBody(response.errorBody()!!)
                     }
@@ -200,7 +200,7 @@ open class Integration private constructor(
                 if (response != null) {
                     if (webServiceCallBack != null) {
                         if (response.code() == 200) {
-                            webServiceCallBack?.onWebServiceVerifiedSuccess()
+                            webServiceCallBack?.onWebServiceVerifiedSuccess(response.body())
                         } else
                             webServiceCallBack?.onWebServiceFailedWithErrorBody(response.errorBody()!!)
                     }
@@ -297,7 +297,7 @@ interface FCMCallBack {
 }
 
 interface WebServiceCallBack {
-    fun onWebServiceVerifiedSuccess()
+    fun onWebServiceVerifiedSuccess(responseBody: ResponseBody?)
     fun onWebServiceFailedWithErrorBody(errorBody: ResponseBody)
     fun onWebServiceError(error: String)
 }
