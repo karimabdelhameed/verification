@@ -19,16 +19,24 @@ So , we made verification module✌🏽to help you in that silly work.
 
 Maven
 
+<pre>
+<code>
 <dependency>
   <groupId>com.bluecrunch</groupId>
   <artifactId>bluecrunchverification</artifactId>
   <version>0.0.4</version>
   <type>pom</type>
 </dependency>
+</code>
+</pre>
 
 Gradle
 
+<pre>
+<code>
 compile 'com.bluecrunch:bluecrunchverification:0.0.4'
+</code>
+</pre>
 
 
 
