@@ -59,6 +59,38 @@ You need to use the widget first in the XML layout of your verification layout.
 In your activity, just make a lateinit var from class called Integration like this :
 <pre><code>private lateinit var integration : Integration</code></pre>
 
+after that you need to build your integration object using builder pattern 🤠like this: 
+
+if you are using <strong>Firebase</strong> : 
+<pre>
+<code>
+integration =
+                Integration
+                    .Builder()
+                    .setContext(this)
+                    .setIsFirebase(true)
+                    .setCountryCode("country code here")
+                    .setFCMCallBack(this)
+                    .setMobileNumber("mobile number here")
+                    .build()
+</code>
+</pre>
+
+and if you are using <strong>Server APIs</strong> : 
+<pre>
+<code>
+          integration =
+                Integration
+                    .Builder()
+                    .setContext(this)
+                    .setIsFirebase(false)
+                    .setIsSendMethodGet(false)
+                    .setSendRequestBody(request body as JsonObject) // if it is a @POST method .
+                    .setWebserviceCallBack(this)
+                    .setSendRequestURL("web server url with end point here") // https://IP/sendSMS/ {params} . if using @GET
+                    .build()
+</code>
+</pre>
 
 
 
