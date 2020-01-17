@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
                     .setIsFirebase(true)
                     .setCountryCode("+2")
                     .setFCMCallBack(this)
-                    .setMobileNumber("01001939963")
+                    .setMobileNumber("01000290477")
                     .build()
             integration.sendFCMSms()
         }
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
 
     private fun sendSMSAPI(){
         val mRequest = JsonObject()
-        mRequest.addProperty("to", "201005140750")
+        mRequest.addProperty("to", "201000290477")
         mRequest.addProperty("message", "Test test")
         send_button.setOnClickListener {
             integration =

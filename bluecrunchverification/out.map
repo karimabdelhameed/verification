@@ -1,6 +1,6 @@
 # compiler: R8
 # compiler_version: 1.5.64
-# pg_map_id: dade65f
+# pg_map_id: 715e956
 androidx.databinding.library.baseAdapters.BR -> androidx.databinding.library.baseAdapters.BR:
     1:1:void <init>():3:3 -> <init>
 com.bluecrunch.bluecrunchverification.BR -> com.bluecrunch.bluecrunchverification.BR:
@@ -39,108 +39,108 @@ com.bluecrunch.bluecrunchverification.Integration -> com.bluecrunch.bluecrunchve
     com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken resendToken -> i
     com.google.firebase.auth.PhoneAuthProvider$OnVerificationStateChangedCallbacks mCallbacks -> l
     com.bluecrunch.bluecrunchverification.FCMCallBack fcmCallBack -> e
-    com.bluecrunch.bluecrunchverification.VerifySMSRequest verifyRequestBody -> h
     androidx.fragment.app.FragmentActivity context -> m
+    com.google.gson.JsonObject sendRequestBody -> g
+    com.google.gson.JsonObject verifyRequestBody -> h
     java.lang.String mobileNumber -> a
-    com.bluecrunch.bluecrunchverification.SendSMSRequest sendRequestBody -> g
     java.lang.String sendRequestURL -> c
     java.lang.String countryCode -> b
     java.lang.String verifyRequestURL -> d
-    1:34:void <init>(androidx.fragment.app.FragmentActivity,com.bluecrunch.bluecrunchverification.Integration$Builder):15:48 -> <init>
-    35:35:void <init>(androidx.fragment.app.FragmentActivity,com.bluecrunch.bluecrunchverification.Integration$Builder,kotlin.jvm.internal.DefaultConstructorMarker):15:15 -> <init>
-    1:6:void verify(java.lang.String):86:91 -> a
-    7:11:void verify(java.lang.String):86:90 -> a
-    12:13:void signInWithPhoneAuthCredential(com.google.firebase.auth.PhoneAuthCredential):96:97 -> a
-    14:14:void signInWithPhoneAuthCredential(com.google.firebase.auth.PhoneAuthCredential):96:96 -> a
-    1:1:java.lang.String access$getCountryCode$p(com.bluecrunch.bluecrunchverification.Integration):15:15 -> access$getCountryCode$p
-    1:1:com.bluecrunch.bluecrunchverification.FCMCallBack access$getFcmCallBack$p(com.bluecrunch.bluecrunchverification.Integration):15:15 -> access$getFcmCallBack$p
-    1:1:java.lang.String access$getMobileNumber$p(com.bluecrunch.bluecrunchverification.Integration):15:15 -> access$getMobileNumber$p
-    1:1:com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken access$getResendToken$p(com.bluecrunch.bluecrunchverification.Integration):15:15 -> access$getResendToken$p
-    1:1:java.lang.String access$getVerificationID$p(com.bluecrunch.bluecrunchverification.Integration):15:15 -> access$getVerificationID$p
-    1:1:com.bluecrunch.bluecrunchverification.WebServiceCallBack access$getWebServiceCallBack$p(com.bluecrunch.bluecrunchverification.Integration):15:15 -> access$getWebServiceCallBack$p
-    1:1:void access$setCountryCode$p(com.bluecrunch.bluecrunchverification.Integration,java.lang.String):15:15 -> access$setCountryCode$p
-    1:1:void access$setFcmCallBack$p(com.bluecrunch.bluecrunchverification.Integration,com.bluecrunch.bluecrunchverification.FCMCallBack):15:15 -> access$setFcmCallBack$p
-    1:1:void access$setMobileNumber$p(com.bluecrunch.bluecrunchverification.Integration,java.lang.String):15:15 -> access$setMobileNumber$p
-    1:1:void access$setResendToken$p(com.bluecrunch.bluecrunchverification.Integration,com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken):15:15 -> access$setResendToken$p
-    1:1:void access$setVerificationID$p(com.bluecrunch.bluecrunchverification.Integration,java.lang.String):15:15 -> access$setVerificationID$p
-    1:1:void access$setWebServiceCallBack$p(com.bluecrunch.bluecrunchverification.Integration,com.bluecrunch.bluecrunchverification.WebServiceCallBack):15:15 -> access$setWebServiceCallBack$p
-    1:1:void access$signInWithPhoneAuthCredential(com.bluecrunch.bluecrunchverification.Integration,com.google.firebase.auth.PhoneAuthCredential):15:15 -> access$signInWithPhoneAuthCredential
-    1:29:void sendFCMSms():52:80 -> sendFCMSms
-    1:3:void sendSMSGET():133:135 -> sendSMSGET
-    1:3:void sendSMSPOST():154:156 -> sendSMSPOST
-    1:4:void verifyFCMPhoneNumberWithCode(java.lang.String):126:129 -> verifyFCMPhoneNumberWithCode
-    1:3:void verifySMSGET():175:177 -> verifySMSGET
-    1:3:void verifySMSPOST():196:198 -> verifySMSPOST
+    1:34:void <init>(androidx.fragment.app.FragmentActivity,com.bluecrunch.bluecrunchverification.Integration$Builder):16:49 -> <init>
+    35:35:void <init>(androidx.fragment.app.FragmentActivity,com.bluecrunch.bluecrunchverification.Integration$Builder,kotlin.jvm.internal.DefaultConstructorMarker):16:16 -> <init>
+    1:6:void verify(java.lang.String):87:92 -> a
+    7:11:void verify(java.lang.String):87:91 -> a
+    12:13:void signInWithPhoneAuthCredential(com.google.firebase.auth.PhoneAuthCredential):97:98 -> a
+    14:14:void signInWithPhoneAuthCredential(com.google.firebase.auth.PhoneAuthCredential):97:97 -> a
+    1:1:java.lang.String access$getCountryCode$p(com.bluecrunch.bluecrunchverification.Integration):16:16 -> access$getCountryCode$p
+    1:1:com.bluecrunch.bluecrunchverification.FCMCallBack access$getFcmCallBack$p(com.bluecrunch.bluecrunchverification.Integration):16:16 -> access$getFcmCallBack$p
+    1:1:java.lang.String access$getMobileNumber$p(com.bluecrunch.bluecrunchverification.Integration):16:16 -> access$getMobileNumber$p
+    1:1:com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken access$getResendToken$p(com.bluecrunch.bluecrunchverification.Integration):16:16 -> access$getResendToken$p
+    1:1:java.lang.String access$getVerificationID$p(com.bluecrunch.bluecrunchverification.Integration):16:16 -> access$getVerificationID$p
+    1:1:com.bluecrunch.bluecrunchverification.WebServiceCallBack access$getWebServiceCallBack$p(com.bluecrunch.bluecrunchverification.Integration):16:16 -> access$getWebServiceCallBack$p
+    1:1:void access$setCountryCode$p(com.bluecrunch.bluecrunchverification.Integration,java.lang.String):16:16 -> access$setCountryCode$p
+    1:1:void access$setFcmCallBack$p(com.bluecrunch.bluecrunchverification.Integration,com.bluecrunch.bluecrunchverification.FCMCallBack):16:16 -> access$setFcmCallBack$p
+    1:1:void access$setMobileNumber$p(com.bluecrunch.bluecrunchverification.Integration,java.lang.String):16:16 -> access$setMobileNumber$p
+    1:1:void access$setResendToken$p(com.bluecrunch.bluecrunchverification.Integration,com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken):16:16 -> access$setResendToken$p
+    1:1:void access$setVerificationID$p(com.bluecrunch.bluecrunchverification.Integration,java.lang.String):16:16 -> access$setVerificationID$p
+    1:1:void access$setWebServiceCallBack$p(com.bluecrunch.bluecrunchverification.Integration,com.bluecrunch.bluecrunchverification.WebServiceCallBack):16:16 -> access$setWebServiceCallBack$p
+    1:1:void access$signInWithPhoneAuthCredential(com.bluecrunch.bluecrunchverification.Integration,com.google.firebase.auth.PhoneAuthCredential):16:16 -> access$signInWithPhoneAuthCredential
+    1:29:void sendFCMSms():53:81 -> sendFCMSms
+    1:3:void sendSMSGET():134:136 -> sendSMSGET
+    1:3:void sendSMSPOST():155:157 -> sendSMSPOST
+    1:4:void verifyFCMPhoneNumberWithCode(java.lang.String):127:130 -> verifyFCMPhoneNumberWithCode
+    1:3:void verifySMSGET():176:178 -> verifySMSGET
+    1:3:void verifySMSPOST():197:199 -> verifySMSPOST
 com.bluecrunch.bluecrunchverification.Integration$Builder -> com.bluecrunch.bluecrunchverification.Integration$Builder:
-    com.bluecrunch.bluecrunchverification.SendSMSRequest sendRequestBody -> i
     com.bluecrunch.bluecrunchverification.WebServiceCallBack webServiceCallBack -> l
     androidx.fragment.app.FragmentActivity context -> h
     com.bluecrunch.bluecrunchverification.FCMCallBack fcmCallBack -> k
     boolean isSendMethodGet -> f
     boolean isVerifyMethodGet -> g
+    com.google.gson.JsonObject sendRequestBody -> i
+    com.google.gson.JsonObject verifyRequestBody -> j
     boolean isFirebase -> a
     java.lang.String countryCode -> c
-    com.bluecrunch.bluecrunchverification.VerifySMSRequest verifyRequestBody -> j
     java.lang.String mobileNumber -> b
     java.lang.String verifyRequestURL -> e
     java.lang.String sendRequestURL -> d
-    1:20:void <init>():216:235 -> <init>
-    1:5:com.bluecrunch.bluecrunchverification.Integration build():284:288 -> build
-    6:6:com.bluecrunch.bluecrunchverification.Integration build():286:286 -> build
-    7:7:com.bluecrunch.bluecrunchverification.Integration build():285:285 -> build
-    1:1:androidx.fragment.app.FragmentActivity getContext():231:231 -> getContext
-    1:1:java.lang.String getCountryCode():221:221 -> getCountryCode
-    1:1:com.bluecrunch.bluecrunchverification.FCMCallBack getFcmCallBack():238:238 -> getFcmCallBack
-    1:1:java.lang.String getMobileNumber():219:219 -> getMobileNumber
-    1:1:com.bluecrunch.bluecrunchverification.SendSMSRequest getSendRequestBody():233:233 -> getSendRequestBody
-    1:1:java.lang.String getSendRequestURL():223:223 -> getSendRequestURL
-    1:1:com.bluecrunch.bluecrunchverification.VerifySMSRequest getVerifyRequestBody():235:235 -> getVerifyRequestBody
-    1:1:java.lang.String getVerifyRequestURL():225:225 -> getVerifyRequestURL
-    1:1:com.bluecrunch.bluecrunchverification.WebServiceCallBack getWebServiceCallBack():240:240 -> getWebServiceCallBack
-    1:1:boolean isFirebase():217:217 -> isFirebase
-    1:1:boolean isSendMethodGet():227:227 -> isSendMethodGet
-    1:1:boolean isVerifyMethodGet():229:229 -> isVerifyMethodGet
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setContext(androidx.fragment.app.FragmentActivity):243:243 -> setContext
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setCountryCode(java.lang.String):281:281 -> setCountryCode
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setFCMCallBack(com.bluecrunch.bluecrunchverification.FCMCallBack):252:252 -> setFCMCallBack
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setIsFirebase(boolean):245:245 -> setIsFirebase
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setIsSendMethodGet(boolean):248:248 -> setIsSendMethodGet
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setIsVerifyMethodGet(boolean):260:260 -> setIsVerifyMethodGet
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setMobileNumber(java.lang.String):279:279 -> setMobileNumber
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setSendRequestBody(com.bluecrunch.bluecrunchverification.SendSMSRequest):272:272 -> setSendRequestBody
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setSendRequestURL(java.lang.String):264:264 -> setSendRequestURL
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setVerifyRequestBody(com.bluecrunch.bluecrunchverification.VerifySMSRequest):276:276 -> setVerifyRequestBody
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setVerifyRequestURL(java.lang.String):268:268 -> setVerifyRequestURL
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setWebserviceCallBack(com.bluecrunch.bluecrunchverification.WebServiceCallBack):256:256 -> setWebserviceCallBack
+    1:20:void <init>():217:236 -> <init>
+    1:5:com.bluecrunch.bluecrunchverification.Integration build():285:289 -> build
+    6:6:com.bluecrunch.bluecrunchverification.Integration build():287:287 -> build
+    7:7:com.bluecrunch.bluecrunchverification.Integration build():286:286 -> build
+    1:1:androidx.fragment.app.FragmentActivity getContext():232:232 -> getContext
+    1:1:java.lang.String getCountryCode():222:222 -> getCountryCode
+    1:1:com.bluecrunch.bluecrunchverification.FCMCallBack getFcmCallBack():239:239 -> getFcmCallBack
+    1:1:java.lang.String getMobileNumber():220:220 -> getMobileNumber
+    1:1:com.google.gson.JsonObject getSendRequestBody():234:234 -> getSendRequestBody
+    1:1:java.lang.String getSendRequestURL():224:224 -> getSendRequestURL
+    1:1:com.google.gson.JsonObject getVerifyRequestBody():236:236 -> getVerifyRequestBody
+    1:1:java.lang.String getVerifyRequestURL():226:226 -> getVerifyRequestURL
+    1:1:com.bluecrunch.bluecrunchverification.WebServiceCallBack getWebServiceCallBack():241:241 -> getWebServiceCallBack
+    1:1:boolean isFirebase():218:218 -> isFirebase
+    1:1:boolean isSendMethodGet():228:228 -> isSendMethodGet
+    1:1:boolean isVerifyMethodGet():230:230 -> isVerifyMethodGet
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setContext(androidx.fragment.app.FragmentActivity):244:244 -> setContext
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setCountryCode(java.lang.String):282:282 -> setCountryCode
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setFCMCallBack(com.bluecrunch.bluecrunchverification.FCMCallBack):253:253 -> setFCMCallBack
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setIsFirebase(boolean):246:246 -> setIsFirebase
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setIsSendMethodGet(boolean):249:249 -> setIsSendMethodGet
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setIsVerifyMethodGet(boolean):261:261 -> setIsVerifyMethodGet
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setMobileNumber(java.lang.String):280:280 -> setMobileNumber
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setSendRequestBody(com.google.gson.JsonObject):273:273 -> setSendRequestBody
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setSendRequestURL(java.lang.String):265:265 -> setSendRequestURL
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setVerifyRequestBody(com.google.gson.JsonObject):277:277 -> setVerifyRequestBody
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setVerifyRequestURL(java.lang.String):269:269 -> setVerifyRequestURL
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setWebserviceCallBack(com.bluecrunch.bluecrunchverification.WebServiceCallBack):257:257 -> setWebserviceCallBack
 com.bluecrunch.bluecrunchverification.Integration$sendFCMSms$1 -> com.bluecrunch.bluecrunchverification.Integration$sendFCMSms$1:
     com.bluecrunch.bluecrunchverification.Integration this$0 -> a
-    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):52:52 -> <init>
-    1:6:void onCodeSent(java.lang.String,com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken):70:75 -> onCodeSent
-    1:2:void onVerificationCompleted(com.google.firebase.auth.PhoneAuthCredential):54:55 -> onVerificationCompleted
-    1:2:void onVerificationFailed(com.google.firebase.FirebaseException):61:62 -> onVerificationFailed
+    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):53:53 -> <init>
+    1:6:void onCodeSent(java.lang.String,com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken):71:76 -> onCodeSent
+    1:2:void onVerificationCompleted(com.google.firebase.auth.PhoneAuthCredential):55:56 -> onVerificationCompleted
+    1:2:void onVerificationFailed(com.google.firebase.FirebaseException):62:63 -> onVerificationFailed
 com.bluecrunch.bluecrunchverification.Integration$sendSMSGET$1 -> com.bluecrunch.bluecrunchverification.Integration$sendSMSGET$1:
     com.bluecrunch.bluecrunchverification.Integration this$0 -> a
-    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):135:135 -> <init>
-    1:1:void onFailure(retrofit2.Call,java.lang.Throwable):148:148 -> onFailure
-    1:5:void onResponse(retrofit2.Call,retrofit2.Response):138:142 -> onResponse
+    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):136:136 -> <init>
+    1:1:void onFailure(retrofit2.Call,java.lang.Throwable):149:149 -> onFailure
+    1:5:void onResponse(retrofit2.Call,retrofit2.Response):139:143 -> onResponse
 com.bluecrunch.bluecrunchverification.Integration$sendSMSPOST$1 -> com.bluecrunch.bluecrunchverification.Integration$sendSMSPOST$1:
     com.bluecrunch.bluecrunchverification.Integration this$0 -> a
-    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):156:156 -> <init>
-    1:1:void onFailure(retrofit2.Call,java.lang.Throwable):169:169 -> onFailure
-    1:5:void onResponse(retrofit2.Call,retrofit2.Response):159:163 -> onResponse
+    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):157:157 -> <init>
+    1:1:void onFailure(retrofit2.Call,java.lang.Throwable):170:170 -> onFailure
+    1:5:void onResponse(retrofit2.Call,retrofit2.Response):160:164 -> onResponse
 com.bluecrunch.bluecrunchverification.Integration$signInWithPhoneAuthCredential$1 -> com.bluecrunch.bluecrunchverification.Integration$a:
     com.bluecrunch.bluecrunchverification.Integration this$0 -> a
-    1:9:void onComplete(com.google.android.gms.tasks.Task):100:108 -> onComplete
+    1:9:void onComplete(com.google.android.gms.tasks.Task):101:109 -> onComplete
 com.bluecrunch.bluecrunchverification.Integration$verifySMSGET$1 -> com.bluecrunch.bluecrunchverification.Integration$verifySMSGET$1:
     com.bluecrunch.bluecrunchverification.Integration this$0 -> a
-    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):177:177 -> <init>
-    1:1:void onFailure(retrofit2.Call,java.lang.Throwable):190:190 -> onFailure
-    1:5:void onResponse(retrofit2.Call,retrofit2.Response):180:184 -> onResponse
+    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):178:178 -> <init>
+    1:1:void onFailure(retrofit2.Call,java.lang.Throwable):191:191 -> onFailure
+    1:5:void onResponse(retrofit2.Call,retrofit2.Response):181:185 -> onResponse
 com.bluecrunch.bluecrunchverification.Integration$verifySMSPOST$1 -> com.bluecrunch.bluecrunchverification.Integration$verifySMSPOST$1:
     com.bluecrunch.bluecrunchverification.Integration this$0 -> a
-    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):198:198 -> <init>
-    1:1:void onFailure(retrofit2.Call,java.lang.Throwable):211:211 -> onFailure
-    1:5:void onResponse(retrofit2.Call,retrofit2.Response):201:205 -> onResponse
+    1:1:void <init>(com.bluecrunch.bluecrunchverification.Integration):199:199 -> <init>
+    1:1:void onFailure(retrofit2.Call,java.lang.Throwable):212:212 -> onFailure
+    1:5:void onResponse(retrofit2.Call,retrofit2.Response):202:206 -> onResponse
 com.bluecrunch.bluecrunchverification.SendSMSRequest -> com.bluecrunch.bluecrunchverification.SendSMSRequest:
     1:1:void <init>():3:3 -> <init>
 com.bluecrunch.bluecrunchverification.VerificationView -> com.bluecrunch.bluecrunchverification.VerificationView:
@@ -153,53 +153,53 @@ com.bluecrunch.bluecrunchverification.VerificationView -> com.bluecrunch.bluecru
     int boxTextColor -> e
     int boxCount -> b
     int boxBG -> c
-    1:1:void <init>(android.content.Context):29:29 -> <init>
-    2:18:void <init>(android.content.Context):19:35 -> <init>
-    19:19:void <init>(android.content.Context,android.util.AttributeSet):40:40 -> <init>
-    20:48:void <init>(android.content.Context,android.util.AttributeSet):19:47 -> <init>
-    1:3:void initStyleables(android.util.AttributeSet):53:55 -> a
-    4:11:void initStyleables(android.util.AttributeSet):53:60 -> a
-    12:19:void initStyleables(android.util.AttributeSet):58:65 -> a
-    20:28:void initStyleables(android.util.AttributeSet):63:71 -> a
-    29:70:void bindViews():76:117 -> a
+    1:1:void <init>(android.content.Context):28:28 -> <init>
+    2:18:void <init>(android.content.Context):18:34 -> <init>
+    19:19:void <init>(android.content.Context,android.util.AttributeSet):39:39 -> <init>
+    20:48:void <init>(android.content.Context,android.util.AttributeSet):18:46 -> <init>
+    1:3:void initStyleables(android.util.AttributeSet):52:54 -> a
+    4:11:void initStyleables(android.util.AttributeSet):52:59 -> a
+    12:19:void initStyleables(android.util.AttributeSet):57:64 -> a
+    20:28:void initStyleables(android.util.AttributeSet):62:70 -> a
+    29:70:void bindViews():75:116 -> a
     1:1:void access$setDigitsText(com.bluecrunch.bluecrunchverification.VerificationView):14:14 -> access$setDigitsText
-    1:3:void inflate():136:138 -> b
-    4:4:void inflate():137:137 -> b
-    1:2:void initTextCodeObservables():145:146 -> c
-    1:1:void listenForTextChanges():152:152 -> d
-    1:20:void setDigitsText():178:197 -> e
-    1:9:void setNumberOfDigits():122:130 -> f
-    10:11:void setNumberOfDigits():127:128 -> f
-    1:1:int getBoxBG():20:20 -> getBoxBG
-    1:1:int getBoxCount():19:19 -> getBoxCount
-    1:1:float getBoxHeight():21:21 -> getBoxHeight
-    1:1:int getBoxSpace():23:23 -> getBoxSpace
-    1:1:int getBoxTextColor():22:22 -> getBoxTextColor
-    1:1:androidx.databinding.ObservableField[] getTextCodeObservables():25:25 -> getTextCodeObservables
-    1:1:java.lang.String getVerificationCodeText():24:24 -> getVerificationCodeText
-    1:1:void setBoxBG(int):20:20 -> setBoxBG
-    1:1:void setBoxCount(int):19:19 -> setBoxCount
-    1:1:void setBoxHeight(float):21:21 -> setBoxHeight
-    1:1:void setBoxSpace(int):23:23 -> setBoxSpace
-    1:1:void setBoxTextColor(int):22:22 -> setBoxTextColor
-    1:1:void setTextCodeObservables(androidx.databinding.ObservableField[]):25:25 -> setTextCodeObservables
-    1:1:void setVerificationCodeText(java.lang.String):24:24 -> setVerificationCodeText
+    1:3:void inflate():135:137 -> b
+    4:4:void inflate():136:136 -> b
+    1:2:void initTextCodeObservables():144:145 -> c
+    1:1:void listenForTextChanges():151:151 -> d
+    1:20:void setDigitsText():177:196 -> e
+    1:9:void setNumberOfDigits():121:129 -> f
+    10:11:void setNumberOfDigits():126:127 -> f
+    1:1:int getBoxBG():19:19 -> getBoxBG
+    1:1:int getBoxCount():18:18 -> getBoxCount
+    1:1:float getBoxHeight():20:20 -> getBoxHeight
+    1:1:int getBoxSpace():22:22 -> getBoxSpace
+    1:1:int getBoxTextColor():21:21 -> getBoxTextColor
+    1:1:androidx.databinding.ObservableField[] getTextCodeObservables():24:24 -> getTextCodeObservables
+    1:1:java.lang.String getVerificationCodeText():23:23 -> getVerificationCodeText
+    1:1:void setBoxBG(int):19:19 -> setBoxBG
+    1:1:void setBoxCount(int):18:18 -> setBoxCount
+    1:1:void setBoxHeight(float):20:20 -> setBoxHeight
+    1:1:void setBoxSpace(int):22:22 -> setBoxSpace
+    1:1:void setBoxTextColor(int):21:21 -> setBoxTextColor
+    1:1:void setTextCodeObservables(androidx.databinding.ObservableField[]):24:24 -> setTextCodeObservables
+    1:1:void setVerificationCodeText(java.lang.String):23:23 -> setVerificationCodeText
 com.bluecrunch.bluecrunchverification.VerificationView$listenForTextChanges$1 -> com.bluecrunch.bluecrunchverification.VerificationView$listenForTextChanges$1:
     com.bluecrunch.bluecrunchverification.VerificationView this$0 -> a
-    1:1:void <init>(com.bluecrunch.bluecrunchverification.VerificationView):152:152 -> <init>
-    1:7:void onTextChanged(java.lang.CharSequence,int,int,int):162:168 -> onTextChanged
+    1:1:void <init>(com.bluecrunch.bluecrunchverification.VerificationView):151:151 -> <init>
+    1:7:void onTextChanged(java.lang.CharSequence,int,int,int):161:167 -> onTextChanged
 com.bluecrunch.bluecrunchverification.VerifySMSRequest -> com.bluecrunch.bluecrunchverification.VerifySMSRequest:
     1:1:void <init>():3:3 -> <init>
 com.bluecrunch.bluecrunchverification.WebService$Companion -> com.bluecrunch.bluecrunchverification.WebService$Companion:
     com.bluecrunch.bluecrunchverification.WebService$Companion $$INSTANCE -> a
-    1:1:void <clinit>():18:18 -> <clinit>
-    1:1:void <init>():18:18 -> <init>
-    1:9:okhttp3.OkHttpClient getClient():20:28 -> a
-    10:14:okhttp3.OkHttpClient getClient():25:29 -> a
-    1:5:retrofit2.Retrofit getRetrofit():32:36 -> getRetrofit
+    1:1:void <clinit>():19:19 -> <clinit>
+    1:1:void <init>():19:19 -> <init>
+    1:9:okhttp3.OkHttpClient getClient():21:29 -> a
+    10:14:okhttp3.OkHttpClient getClient():26:30 -> a
+    1:5:retrofit2.Retrofit getRetrofit():33:37 -> getRetrofit
 com.bluecrunch.bluecrunchverification.WebService$Companion$client$1 -> com.bluecrunch.bluecrunchverification.WebService$Companion$a:
     com.bluecrunch.bluecrunchverification.WebService$Companion$client$1 INSTANCE -> a
-    1:1:void log(java.lang.String):26:26 -> log
+    1:1:void log(java.lang.String):27:27 -> log
 com.bluecrunch.bluecrunchverification.databinding.VerificationViewBinding -> com.bluecrunch.bluecrunchverification.databinding.VerificationViewBinding:
     1:15:void <init>(java.lang.Object,android.view.View,int,android.widget.LinearLayout,android.widget.LinearLayout,android.widget.LinearLayout,android.widget.LinearLayout,android.widget.LinearLayout,android.widget.LinearLayout,android.widget.FrameLayout,android.widget.EditText,android.widget.TextView,android.widget.TextView,android.widget.TextView,android.widget.TextView,android.widget.TextView,android.widget.TextView):80:94 -> <init>
     1:1:com.bluecrunch.bluecrunchverification.databinding.VerificationViewBinding bind(android.view.View):158:158 -> bind
