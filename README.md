@@ -92,7 +92,7 @@ integration =
 </code>
 </pre>
 
-Finally , you just need to call send SMS or verify SMS methods : 
+Finally 🥳, you just need to call send SMS or verify SMS methods : 
 <pre>
 <code>
  integration.sendFCMSms() 
