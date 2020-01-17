@@ -2,8 +2,6 @@ package com.bluecrunch.bluecrunchverification
 
 import android.app.Activity
 import androidx.fragment.app.FragmentActivity
-import com.bluecrunch.verification.VerifySMSRequest
-import com.bluecrunch.verification.WebService
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -14,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.concurrent.TimeUnit
 
-class Integration private constructor(
+open class Integration private constructor(
     private var context: FragmentActivity,
     builder: Builder
 ) {
@@ -26,8 +24,8 @@ class Integration private constructor(
     private var countryCode = ""
     private var sendRequestURL = ""
     private var verifyRequestURL = ""
-    private var fcmCallBack: FCMCallBack
-    private var webServiceCallBack: WebServiceCallBack
+    private var fcmCallBack: FCMCallBack?
+    private var webServiceCallBack: WebServiceCallBack?
     private var sendRequestBody = SendSMSRequest()
     private var verifyRequestBody = VerifySMSRequest()
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
@@ -61,7 +59,7 @@ class Integration private constructor(
 //                hideProgressDialog()
 //                showPopUp(e.message, android.R.string.ok, false)
                 if (fcmCallBack != null && e.localizedMessage != null) {
-                    fcmCallBack.onFCMError(e.localizedMessage!!)
+                    fcmCallBack?.onFCMError(e.localizedMessage!!)
                 }
             }
 
@@ -74,7 +72,7 @@ class Integration private constructor(
                 resendToken = forceResendingToken
                 verificationID = id
                 if (fcmCallBack != null) {
-                    fcmCallBack.onFCMCodeSent()
+                    fcmCallBack?.onFCMCodeSent()
                 }
             }
         }
@@ -102,10 +100,13 @@ class Integration private constructor(
             if (task.isSuccessful) {
                 try {
                     if (fcmCallBack != null) {
-                        fcmCallBack.onFCMVerifiedSuccess()
+                        fcmCallBack?.onFCMVerifiedSuccess()
                     }
                     FirebaseAuth.getInstance().signOut()
                 } catch (ex: Exception) {
+                    if (fcmCallBack != null) {
+                        fcmCallBack?.onFCMError(ex.localizedMessage!!)
+                    }
 //                    showPopUp(
 //                        ex.localizedMessage, android.R.string.ok,
 //                        false
@@ -136,15 +137,15 @@ class Integration private constructor(
                 if (response != null) {
                     if (webServiceCallBack != null) {
                         if (response.code() == 200) {
-                            webServiceCallBack.onWebServiceVerifiedSuccess()
+                            webServiceCallBack?.onWebServiceVerifiedSuccess()
                         } else
-                            webServiceCallBack.onWebServiceFailedWithErrorBody(response.errorBody()!!)
+                            webServiceCallBack?.onWebServiceFailedWithErrorBody(response.errorBody()!!)
                     }
                 }
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                webServiceCallBack.onWebServiceError(t.localizedMessage)
+                webServiceCallBack?.onWebServiceError(t.localizedMessage)
             }
         })
     }
@@ -157,15 +158,15 @@ class Integration private constructor(
                 if (response != null) {
                     if (webServiceCallBack != null) {
                         if (response.code() == 200) {
-                            webServiceCallBack.onWebServiceVerifiedSuccess()
+                            webServiceCallBack?.onWebServiceVerifiedSuccess()
                         } else
-                            webServiceCallBack.onWebServiceFailedWithErrorBody(response.errorBody()!!)
+                            webServiceCallBack?.onWebServiceFailedWithErrorBody(response.errorBody()!!)
                     }
                 }
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                webServiceCallBack.onWebServiceError(t.localizedMessage)
+                webServiceCallBack?.onWebServiceError(t.localizedMessage)
             }
         })
     }
@@ -178,15 +179,15 @@ class Integration private constructor(
                 if (response != null) {
                     if (webServiceCallBack != null) {
                         if (response.code() == 200) {
-                            webServiceCallBack.onWebServiceVerifiedSuccess()
+                            webServiceCallBack?.onWebServiceVerifiedSuccess()
                         } else
-                            webServiceCallBack.onWebServiceFailedWithErrorBody(response.errorBody()!!)
+                            webServiceCallBack?.onWebServiceFailedWithErrorBody(response.errorBody()!!)
                     }
                 }
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                webServiceCallBack.onWebServiceError(t.localizedMessage)
+                webServiceCallBack?.onWebServiceError(t.localizedMessage)
             }
         })
     }
@@ -199,15 +200,15 @@ class Integration private constructor(
                 if (response != null) {
                     if (webServiceCallBack != null) {
                         if (response.code() == 200) {
-                            webServiceCallBack.onWebServiceVerifiedSuccess()
+                            webServiceCallBack?.onWebServiceVerifiedSuccess()
                         } else
-                            webServiceCallBack.onWebServiceFailedWithErrorBody(response.errorBody()!!)
+                            webServiceCallBack?.onWebServiceFailedWithErrorBody(response.errorBody()!!)
                     }
                 }
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                webServiceCallBack.onWebServiceError(t.localizedMessage)
+                webServiceCallBack?.onWebServiceError(t.localizedMessage)
             }
         })
     }
@@ -234,9 +235,9 @@ class Integration private constructor(
         var verifyRequestBody = VerifySMSRequest()
             private set
 
-        lateinit var fcmCallBack: FCMCallBack
+        var fcmCallBack: FCMCallBack? = null
             private set
-        lateinit var webServiceCallBack: WebServiceCallBack
+        var webServiceCallBack: WebServiceCallBack? = null
             private set
 
         fun setContext(context: FragmentActivity) = apply { this.context = context }
@@ -283,7 +284,7 @@ class Integration private constructor(
             val integration = Integration(context, this)
             check(integration.mobileNumber.isNotEmpty()) { "Mobile number must be set!" }
             check(integration.countryCode.isNotEmpty()) { "Country code must be set!" }
-            check(integration.fcmCallBack == null) { "Callback isn't set!" }
+//            check(integration.fcmCallBack == null) { "Callback isn't set!" }
             return Integration(context, this)
         }
     }

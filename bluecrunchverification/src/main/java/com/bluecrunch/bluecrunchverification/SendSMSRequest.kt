@@ -1,5 +1,5 @@
 package com.bluecrunch.bluecrunchverification
 
-class SendSMSRequest {
+open class SendSMSRequest {
 
 }

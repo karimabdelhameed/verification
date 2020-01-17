@@ -1,5 +1,5 @@
-package com.bluecrunch.verification
+package com.bluecrunch.bluecrunchverification
 
-class VerifySMSRequest {
+open class VerifySMSRequest {
 
 }

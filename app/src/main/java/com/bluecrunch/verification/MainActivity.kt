@@ -1,6 +1,7 @@
 package com.bluecrunch.verification
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.bluecrunch.bluecrunchverification.FCMCallBack
 import com.bluecrunch.bluecrunchverification.Integration
@@ -16,8 +17,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        sendCodeFCM()
-        verifyCodeFCM()
+        sendSMSAPI()
     }
 
     private fun sendCodeFCM() {
@@ -29,13 +29,16 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
                     .setIsFirebase(true)
                     .setCountryCode("+2")
                     .setFCMCallBack(this)
-                    .setMobileNumber("01155520332")
+                    .setMobileNumber("01000290477")
                     .build()
             integration.sendFCMSms()
         }
     }
 
     private fun sendSMSAPI(){
+        val mRequest = TestSMSRequest()
+        mRequest.to = "201000290477"
+        mRequest.message = "Hello , This is a test SMS!"
         send_button.setOnClickListener {
             integration =
                 Integration
@@ -44,10 +47,13 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
                     .setIsFirebase(false)
                     .setCountryCode("+2")
                     .setMobileNumber("01000290477")
-                    .setIsSendMethodGet(true)
+                    .setIsSendMethodGet(false)
+                    .setSendRequestBody(mRequest)
                     .setWebserviceCallBack(this)
-                    .setSendRequestURL("")
+                    .setSendRequestURL("http://192.241.234.75:9876/send-sms")
                     .build()
+
+            integration.sendSMSPOST()
         }
     }
 
@@ -58,27 +64,28 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
     }
 
     override fun onFCMVerifiedSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.e("Success : ","FCM Verified success")
     }
 
     override fun onFCMCodeSent() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.e("Success : ","FCM Code Sent")
     }
 
     override fun onFCMError(error: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.e("Error : FCM",error)
+
     }
 
     override fun onWebServiceVerifiedSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.e("Success : ","API Success")
     }
 
     override fun onWebServiceFailedWithErrorBody(errorBody: ResponseBody) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.e("Error Body : ",errorBody.string())
     }
 
     override fun onWebServiceError(error: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Log.e("Error API : ",error)
     }
 
 }

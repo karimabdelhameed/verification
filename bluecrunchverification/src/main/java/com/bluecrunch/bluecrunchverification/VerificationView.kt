@@ -3,20 +3,19 @@ package com.bluecrunch.bluecrunchverification
 import android.annotation.SuppressLint
 import android.content.Context
 import android.text.Editable
+import android.text.InputFilter
 import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ObservableField
-import com.bluecrunch.bluecrunchverification.databinding.VerificationViewBinding
 import kotlinx.android.synthetic.main.verification_view.view.*
 
-
-class VerificationView : ConstraintLayout {
+open class VerificationView : ConstraintLayout {
 
     private var mContext: Context? = null
-    private var binding: VerificationViewBinding? = null
+
+    //    private var binding: VerificationViewBinding? = null
     var boxCount = 4
     var boxBG = 0
     var boxHeight = 0f
@@ -47,6 +46,7 @@ class VerificationView : ConstraintLayout {
         initTextCodeObservables()
         listenForTextChanges()
     }
+
 
     /** Init styles attrs from styleable file **/
     private fun initStyleables(attrs: AttributeSet?) {
@@ -119,17 +119,25 @@ class VerificationView : ConstraintLayout {
 
     /** Init number of digits for code layout **/
     private fun setNumberOfDigits() {
-        binding?.isFourDigit = boxCount == 4
-        binding?.isSixDigit = boxCount == 6
+        val fArray = arrayOfNulls<InputFilter>(1)
+        fArray[0] = InputFilter.LengthFilter(boxCount)
+        typed_editText.filters = fArray
+        when (boxCount) {
+            4 -> {
+                code_5_layout.visibility = GONE
+                code_6_layout.visibility = GONE
+            }
+            5 -> code_6_layout.visibility = GONE
+        }
     }
 
     /** Inflate verification layout **/
     private fun inflate() {
-        binding = DataBindingUtil.inflate(
-            LayoutInflater.from(mContext),
-            R.layout.verification_view, this, true
+        val layoutInflater = LayoutInflater.from(context)
+        layoutInflater.inflate(
+            R.layout.verification_view,
+            this, true
         )
-        binding?.view = this
     }
 
     /** Init text codes for 1st time **/
@@ -149,6 +157,7 @@ class VerificationView : ConstraintLayout {
                 i2: Int
             ) {
             }
+
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
                 verificationCodeText = charSequence.toString()
                 while (verificationCodeText.length < boxCount) {
@@ -156,10 +165,36 @@ class VerificationView : ConstraintLayout {
                 }
                 for (j in verificationCodeText.indices) {
                     textCodeObservables[j]?.set("${verificationCodeText[j]}")
+                    setDigitsText()
                 }
             }
 
             override fun afterTextChanged(editable: Editable) {}
         })
+    }
+
+    /** Automatic set digits in every box **/
+    private fun setDigitsText() {
+        if(boxCount == 4){
+            verification_1_textView.text = verificationCodeText[0].toString()
+            verification_2_textView.text = verificationCodeText[1].toString()
+            verification_3_textView.text = verificationCodeText[2].toString()
+            verification_4_textView.text = verificationCodeText[3].toString()
+        }
+        else if(boxCount == 5){
+            verification_1_textView.text = verificationCodeText[0].toString()
+            verification_2_textView.text = verificationCodeText[1].toString()
+            verification_3_textView.text = verificationCodeText[2].toString()
+            verification_4_textView.text = verificationCodeText[3].toString()
+            verification_5_textView.text = verificationCodeText[4].toString()
+        }
+        else if(boxCount == 6){
+            verification_1_textView.text = verificationCodeText[0].toString()
+            verification_2_textView.text = verificationCodeText[1].toString()
+            verification_3_textView.text = verificationCodeText[2].toString()
+            verification_4_textView.text = verificationCodeText[3].toString()
+            verification_5_textView.text = verificationCodeText[4].toString()
+            verification_6_textView.text = verificationCodeText[5].toString()
+        }
     }
 }

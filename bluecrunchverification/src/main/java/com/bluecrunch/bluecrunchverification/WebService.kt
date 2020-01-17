@@ -1,8 +1,9 @@
-package com.bluecrunch.verification
+package com.bluecrunch.bluecrunchverification
 
-import com.bluecrunch.bluecrunchverification.SendSMSRequest
+import android.util.Log
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,14 +19,18 @@ interface WebService {
         private val client: OkHttpClient
             get() = OkHttpClient()
                 .newBuilder()
-                .readTimeout(1,TimeUnit.MINUTES)
-                .writeTimeout(1,TimeUnit.MINUTES)
-                .connectTimeout(1,TimeUnit.MINUTES)
+                .readTimeout(1, TimeUnit.MINUTES)
+                .writeTimeout(1, TimeUnit.MINUTES)
+                .connectTimeout(1, TimeUnit.MINUTES)
+                .addInterceptor(HttpLoggingInterceptor { message ->
+                    Log.e("API = > ", message)
+                }
+                    .setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build()
 
         val retrofit: Retrofit
             get() = Retrofit.Builder()
-                .baseUrl("http://ws.audioscrobbler.com")
+                .baseUrl("http://www.google.com")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

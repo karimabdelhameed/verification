@@ -44,7 +44,7 @@ com.bluecrunch.bluecrunchverification.Integration -> com.bluecrunch.bluecrunchve
     com.bluecrunch.bluecrunchverification.SendSMSRequest sendRequestBody -> g
     java.lang.String sendRequestURL -> c
     java.lang.String countryCode -> b
-    com.bluecrunch.verification.VerifySMSRequest verifyRequestBody -> h
+    com.bluecrunch.bluecrunchverification.VerifySMSRequest verifyRequestBody -> h
     java.lang.String verifyRequestURL -> d
     1:34:void <init>(androidx.fragment.app.FragmentActivity,com.bluecrunch.bluecrunchverification.Integration$Builder):17:50 -> <init>
     35:35:void <init>(androidx.fragment.app.FragmentActivity,com.bluecrunch.bluecrunchverification.Integration$Builder,kotlin.jvm.internal.DefaultConstructorMarker):17:17 -> <init>
@@ -72,7 +72,7 @@ com.bluecrunch.bluecrunchverification.Integration -> com.bluecrunch.bluecrunchve
     1:3:void verifySMSGET():174:176 -> verifySMSGET
     1:3:void verifySMSPOST():195:197 -> verifySMSPOST
 com.bluecrunch.bluecrunchverification.Integration$Builder -> com.bluecrunch.bluecrunchverification.Integration$Builder:
-    com.bluecrunch.verification.VerifySMSRequest verifyRequestBody -> j
+    com.bluecrunch.bluecrunchverification.VerifySMSRequest verifyRequestBody -> j
     com.bluecrunch.bluecrunchverification.SendSMSRequest sendRequestBody -> i
     com.bluecrunch.bluecrunchverification.WebServiceCallBack webServiceCallBack -> l
     androidx.fragment.app.FragmentActivity context -> h
@@ -95,7 +95,7 @@ com.bluecrunch.bluecrunchverification.Integration$Builder -> com.bluecrunch.blue
     1:1:java.lang.String getMobileNumber():218:218 -> getMobileNumber
     1:1:com.bluecrunch.bluecrunchverification.SendSMSRequest getSendRequestBody():232:232 -> getSendRequestBody
     1:1:java.lang.String getSendRequestURL():222:222 -> getSendRequestURL
-    1:1:com.bluecrunch.verification.VerifySMSRequest getVerifyRequestBody():234:234 -> getVerifyRequestBody
+    1:1:com.bluecrunch.bluecrunchverification.VerifySMSRequest getVerifyRequestBody():234:234 -> getVerifyRequestBody
     1:1:java.lang.String getVerifyRequestURL():224:224 -> getVerifyRequestURL
     1:1:com.bluecrunch.bluecrunchverification.WebServiceCallBack getWebServiceCallBack():239:239 -> getWebServiceCallBack
     1:1:boolean isFirebase():216:216 -> isFirebase
@@ -110,7 +110,7 @@ com.bluecrunch.bluecrunchverification.Integration$Builder -> com.bluecrunch.blue
     1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setMobileNumber(java.lang.String):278:278 -> setMobileNumber
     1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setSendRequestBody(com.bluecrunch.bluecrunchverification.SendSMSRequest):271:271 -> setSendRequestBody
     1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setSendRequestURL(java.lang.String):263:263 -> setSendRequestURL
-    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setVerifyRequestBody(com.bluecrunch.verification.VerifySMSRequest):275:275 -> setVerifyRequestBody
+    1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setVerifyRequestBody(com.bluecrunch.bluecrunchverification.VerifySMSRequest):275:275 -> setVerifyRequestBody
     1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setVerifyRequestURL(java.lang.String):267:267 -> setVerifyRequestURL
     1:1:com.bluecrunch.bluecrunchverification.Integration$Builder setWebserviceCallBack(com.bluecrunch.bluecrunchverification.WebServiceCallBack):255:255 -> setWebserviceCallBack
 com.bluecrunch.bluecrunchverification.Integration$sendFCMSms$1 -> com.bluecrunch.bluecrunchverification.Integration$sendFCMSms$1:
@@ -229,10 +229,10 @@ com.bluecrunch.bluecrunchverification.databinding.VerificationViewBindingImpl ->
     1:8:boolean setVariable(int,java.lang.Object):88:95 -> setVariable
     1:6:void setView(com.bluecrunch.bluecrunchverification.VerificationView):110:115 -> setView
     7:7:void setView(com.bluecrunch.bluecrunchverification.VerificationView):113:113 -> setView
-com.bluecrunch.verification.VerifySMSRequest -> com.bluecrunch.verification.VerifySMSRequest:
+com.bluecrunch.bluecrunchverification.VerifySMSRequest -> com.bluecrunch.bluecrunchverification.VerifySMSRequest:
     1:1:void <init>():3:3 -> <init>
-com.bluecrunch.verification.WebService$Companion -> com.bluecrunch.verification.WebService$Companion:
-    com.bluecrunch.verification.WebService$Companion $$INSTANCE -> a
+com.bluecrunch.bluecrunchverification.WebService$Companion -> com.bluecrunch.bluecrunchverification.WebService$Companion:
+    com.bluecrunch.bluecrunchverification.WebService$Companion $$INSTANCE -> a
     1:1:void <clinit>():17:17 -> <clinit>
     1:1:void <init>():17:17 -> <init>
     1:6:okhttp3.OkHttpClient getClient():19:24 -> a
