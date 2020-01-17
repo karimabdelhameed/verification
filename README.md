@@ -21,12 +21,12 @@ Maven
 
 <pre>
 <code>
-<dependency>
+"<dependency>
   <groupId>com.bluecrunch</groupId>
   <artifactId>bluecrunchverification</artifactId>
   <version>0.0.4</version>
   <type>pom</type>
-</dependency>
+</dependency>"
 </code>
 </pre>
 
