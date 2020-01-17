@@ -101,5 +101,12 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 </code>
 </pre>
 
+# Special thanks 
+To all <a href='https://www.bluecrunch.com/'>Bluecrunch</a> team specially the mobile team 💪🏻.
 
+# Licence 
+Copyright 2020 Karim abdelhameed.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of at:
+<a href='https://opensource.org/licenses/apache2.0.php'>https://opensource.org/licenses/apache2.0.php</a>
 
+# Thank you ❤️
