@@ -74,14 +74,14 @@ if you are using <strong>Firebase</strong> :
 <pre>
 <code>
 integration =
-                Integration
-                    .Builder()
-                    .setContext(this)
-                    .setIsFirebase(true)
-                    .setCountryCode("country code here")
-                    .setFCMCallBack(this)
-                    .setMobileNumber("mobile number here")
-                    .build()
+      Integration
+          .Builder()
+          .setContext(this)
+          .setIsFirebase(true)
+          .setCountryCode("country code here")
+          .setFCMCallBack(this)
+          .setMobileNumber("mobile number here")
+          .build()
 </code>
 </pre>
 
