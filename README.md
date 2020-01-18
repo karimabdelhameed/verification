@@ -115,5 +115,3 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 <a href='https://opensource.org/licenses/apache2.0.php'>https://opensource.org/licenses/apache2.0.php</a>
 
 # Thank you ❤️
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hk8yx6i1phU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
