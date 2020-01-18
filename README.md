@@ -26,7 +26,7 @@ So , we made verification module✌🏽to help you in that silly work.
 <img src="https://imgbbb.com/images/2020/01/18/267257def58765819.png" width="250"/>
 </p>
 
-<img src="https://media.giphy.com/media/XGDrYnfDdJZAVSTaUu/giphy.gif"/>
+<img src="https://media.giphy.com/media/XGDrYnfDdJZAVSTaUu/giphy.gif" width="250"/>
 
 # Download 
 Maven
