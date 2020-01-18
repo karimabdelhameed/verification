@@ -22,8 +22,8 @@ So , we made verification module✌🏽to help you in that silly work.
 # Sceenshots
 <p float="left">
 <img src='https://imgbbb.com/images/2020/01/18/1c5d2dc47c51318f1.png' width="250"/>
-<img src="https://imgbbb.com/images/2020/01/18/228f11ca06ed8acd0.png" width="250"/>
-<img src="https://imgbbb.com/images/2020/01/18/3c05d70c3c423b737.png" width="250"/>
+<img src="https://imgbbb.com/images/2020/01/18/32ab32c79c96a8ad2.png" width="250"/>
+<img src="https://imgbbb.com/images/2020/01/18/267257def58765819.png" width="250"/>
 </p>
 
 <img src="https://media.giphy.com/media/XGDrYnfDdJZAVSTaUu/giphy.gif"/>
