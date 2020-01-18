@@ -118,5 +118,5 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 
 
 
-![](http://i.imgur.com/OUkLi.gif)
+![](https://gfycat.com/indolentdazzlingcheetah.gif)
 
