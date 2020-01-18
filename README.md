@@ -19,6 +19,11 @@ So , we made verification module✌🏽to help you in that silly work.
 <li>Control digit box size & spaces.</li>
 <li>Control digit box height & text color.</li>
 
+# Sceenshots
+
+<img src="https://media.giphy.com/media/XGDrYnfDdJZAVSTaUu/giphy.gif"/>
+
+
 # Download 
 Maven
 <pre>
@@ -115,8 +120,3 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 <a href='https://opensource.org/licenses/apache2.0.php'>https://opensource.org/licenses/apache2.0.php</a>
 
 # Thank you ❤️
-
-
-
-<img src="https://media.giphy.com/media/XGDrYnfDdJZAVSTaUu/giphy.gif"/>
-
