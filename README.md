@@ -116,5 +116,3 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 
 # Thank you ❤️
 
-
-<video controls=""><source id="videoSource" src="https://srv-file4.gofile.io/download/NfMw8z/video-1579346044.mp4"></video>
