@@ -65,7 +65,7 @@ You need to use the widget first in the XML layout of your verification layout.
             app:layout_constraintTop_toTopOf="parent" /&gt;
 </code>
 </pre>
-In your activity, just make a lateinit var from class called Integration like this :
+In your activity/fragment, just make a lateinit var from class called Integration like this :
 <pre><code>private lateinit var integration : Integration</code></pre>
 
 after that you need to build your integration object using builder pattern 🤠 like this: 
