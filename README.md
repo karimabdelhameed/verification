@@ -62,7 +62,7 @@ You need to use the widget first in the XML layout of your verification layout.
             app:box_background="@drawable/line_shape"
             app:box_text_color="@color/colorAccent"
             app:box_space="7dp"
-            app:layout_constraintTop_toTopOf="parent" /&lt;
+            app:layout_constraintTop_toTopOf="parent" /&gt;
 </code>
 </pre>
 In your activity, just make a lateinit var from class called Integration like this :
