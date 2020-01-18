@@ -20,10 +20,9 @@ So , we made verification module✌🏽to help you in that silly work.
 <li>Control digit box height & text color.</li>
 
 # Sceenshots
-
 <img src='https://imgbbb.com/images/2020/01/18/1c5d2dc47c51318f1.png'>
-<img src="https://ibb.co/jyDQjkg"/>
-<img src="https://ibb.co/xMxqbSS"/>
+<img src="https://imgbbb.com/images/2020/01/18/228f11ca06ed8acd0.png"/>
+<img src="https://imgbbb.com/images/2020/01/18/3c05d70c3c423b737.png"/>
 <img src="https://media.giphy.com/media/XGDrYnfDdJZAVSTaUu/giphy.gif"/>
 
 
