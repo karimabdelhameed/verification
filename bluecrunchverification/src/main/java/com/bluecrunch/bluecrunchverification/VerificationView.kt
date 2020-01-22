@@ -56,7 +56,7 @@ open class VerificationView : ConstraintLayout {
         boxCount = typeArr!!.getInt(R.styleable.VerificationView_box_count, 4)
         boxBG = typeArr.getResourceId(
             R.styleable.VerificationView_box_background,
-            R.drawable.cornered_shape
+            R.drawable.verification_box_default_bg
         )
         boxHeight = typeArr.getDimension(R.styleable.VerificationView_box_height, 50f)
         boxTextColor = typeArr.getColor(

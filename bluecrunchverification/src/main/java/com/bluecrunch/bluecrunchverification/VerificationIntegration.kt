@@ -6,14 +6,14 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
-import com.google.gson.JsonObject
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 import java.util.concurrent.TimeUnit
 
-open class Integration private constructor(
+open class VerificationIntegration private constructor(
     private var context: FragmentActivity,
     builder: Builder
 ) {
@@ -24,11 +24,9 @@ open class Integration private constructor(
     private var mobileNumber = ""
     private var countryCode = ""
     private var sendRequestURL = ""
-    private var verifyRequestURL = ""
     private var fcmCallBack: FCMCallBack?
     private var webServiceCallBack: WebServiceCallBack?
-    private var sendRequestBody = JsonObject()
-    private var verifyRequestBody = JsonObject()
+    private var sendRequestBody = TreeMap<String,Any>()
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private var verificationID = ""
     private var mAuth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -42,9 +40,7 @@ open class Integration private constructor(
         this.isSendMethodGet = builder.isSendMethodGet
         this.isVerifyMethodGet = builder.isVerifyMethodGet
         this.sendRequestURL = builder.sendRequestURL
-        this.verifyRequestURL = builder.verifyRequestURL
         this.sendRequestBody = builder.sendRequestBody
-        this.verifyRequestBody = builder.verifyRequestBody
         this.fcmCallBack = builder.fcmCallBack
         this.webServiceCallBack = builder.webServiceCallBack
     }
@@ -57,8 +53,6 @@ open class Integration private constructor(
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-//                hideProgressDialog()
-//                showPopUp(e.message, android.R.string.ok, false)
                 if (fcmCallBack != null && e.localizedMessage != null) {
                     fcmCallBack?.onFCMError(e.localizedMessage!!)
                 }
@@ -69,7 +63,6 @@ open class Integration private constructor(
                 forceResendingToken: PhoneAuthProvider.ForceResendingToken
             ) {
                 super.onCodeSent(id, forceResendingToken)
-//                hideProgressDialog()
                 resendToken = forceResendingToken
                 verificationID = id
                 if (fcmCallBack != null) {
@@ -79,8 +72,6 @@ open class Integration private constructor(
         }
 
         verify(mobileNumber)
-
-//        showProgressDialog(R.string.sending_code)
     }
 
     private fun verify(phoneNumber: String) {
@@ -97,26 +88,21 @@ open class Integration private constructor(
         mAuth.signInWithCredential(credential).addOnCompleteListener(context as Activity)
         { task ->
 
-            //            hideProgressDialog()
             if (task.isSuccessful) {
                 try {
                     if (fcmCallBack != null) {
                         fcmCallBack?.onFCMVerifiedSuccess()
                     }
-                   // FirebaseAuth.getInstance().signOut()
+                    FirebaseAuth.getInstance().signOut()
                 } catch (ex: Exception) {
                     if (fcmCallBack != null) {
                         fcmCallBack?.onFCMError(ex.localizedMessage!!)
                     }
-//                    showPopUp(
-//                        ex.localizedMessage, android.R.string.ok,
-//                        false
-//                    )
                 }
             } else {
-//                showPopUp(R.string.invalid_code, android.R.string.ok,
-//                    DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() }, true
-//                )
+                if (fcmCallBack != null) {
+                    fcmCallBack?.onFCMVerificationCodeError()
+                }
             }
         }
     }
@@ -126,7 +112,6 @@ open class Integration private constructor(
         val credential = PhoneAuthProvider
             .getCredential(verificationID, verificationCode)
 
-//        showProgressDialog(R.string.please_wait)
         signInWithPhoneAuthCredential(credential)
     }
 
@@ -172,9 +157,9 @@ open class Integration private constructor(
         })
     }
 
-    fun verifySMSGET() {
+    fun verifySMSGET(verifyURL : String) {
         val webService = WebService.retrofit.create(WebService::class.java)
-        val call = webService.verifySMSGET(verifyRequestURL)
+        val call = webService.verifySMSGET(verifyURL)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response != null) {
@@ -193,9 +178,9 @@ open class Integration private constructor(
         })
     }
 
-    fun verifySMSPOST() {
+    fun verifySMSPOST(verifyURL : String,request : TreeMap<String,Any>) {
         val webService = WebService.retrofit.create(WebService::class.java)
-        val call = webService.verifySMSPOST(verifyRequestURL, verifyRequestBody)
+        val call = webService.verifySMSPOST(verifyURL, request)
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response != null) {
@@ -214,7 +199,7 @@ open class Integration private constructor(
         })
     }
 
-    class Builder {
+    class Builder(val context: FragmentActivity) {
         var isFirebase = true
             private set
         var mobileNumber = ""
@@ -223,25 +208,17 @@ open class Integration private constructor(
             private set
         var sendRequestURL = ""
             private set
-        var verifyRequestURL = ""
-            private set
         var isSendMethodGet = false
             private set
         var isVerifyMethodGet = false
             private set
-        var context = FragmentActivity()
-            private set
-        var sendRequestBody = JsonObject()
-            private set
-        var verifyRequestBody = JsonObject()
+        var sendRequestBody = TreeMap<String,Any>()
             private set
 
         var fcmCallBack: FCMCallBack? = null
             private set
         var webServiceCallBack: WebServiceCallBack? = null
             private set
-
-        fun setContext(context: FragmentActivity) = apply { this.context = context }
 
         fun setIsFirebase(isFirebase: Boolean) = apply { this.isFirebase = isFirebase }
 
@@ -265,28 +242,34 @@ open class Integration private constructor(
             this.sendRequestURL = sendRequestURL
         }
 
-        fun setVerifyRequestURL(verifyRequestURL: String) = apply {
-            this.verifyRequestURL = verifyRequestURL
-        }
-
-        fun setSendRequestBody(sendRequestBody: JsonObject) = apply {
+        fun setSendRequestBody(sendRequestBody: TreeMap<String,Any>) = apply {
             this.sendRequestBody = sendRequestBody
-        }
-
-        fun setVerifyRequestBody(verifyRequestBody: JsonObject) = apply {
-            this.verifyRequestBody = verifyRequestBody
         }
 
         fun setMobileNumber(mobileNumber: String) = apply { this.mobileNumber = mobileNumber }
 
         fun setCountryCode(countryCode: String) = apply { this.countryCode = countryCode }
 
-        fun build(): Integration {
-            val integration = Integration(context, this)
-            check(integration.mobileNumber.isNotEmpty()) { "Mobile number must be set!" }
-            check(integration.countryCode.isNotEmpty()) { "Country code must be set!" }
-//            check(integration.fcmCallBack == null) { "Callback isn't set!" }
-            return Integration(context, this)
+        fun build(): VerificationIntegration {
+            val integration = VerificationIntegration(context, this)
+            if(isFirebase){
+                if(integration.countryCode.isEmpty())
+                    throw RuntimeException("Country code must be set!")
+                if(integration.mobileNumber.isEmpty())
+                    throw RuntimeException("Mobile number must be set!")
+                if(integration.fcmCallBack == null)
+                    throw RuntimeException("Firebase callback must be set!")
+            }
+                check(!isFirebase && integration.webServiceCallBack == null)
+                { "Web service callback must be set!" }
+
+                check(isSendMethodGet && integration.sendRequestURL.isEmpty())
+                { "Request URL must be set!" }
+
+                check(!isSendMethodGet && integration.sendRequestBody.isNullOrEmpty()) {
+                    { "Body request must be set!" }
+                }
+            return VerificationIntegration(context, this)
         }
     }
 }
@@ -295,6 +278,7 @@ interface FCMCallBack {
     fun onFCMVerifiedSuccess()
     fun onFCMCodeSent()
     fun onFCMError(error: String)
+    fun onFCMVerificationCodeError()
 }
 
 interface WebServiceCallBack {

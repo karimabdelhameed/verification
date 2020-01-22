@@ -1,7 +1,6 @@
 package com.bluecrunch.bluecrunchverification
 
 import android.util.Log
-import com.google.gson.JsonObject
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,6 +13,7 @@ import retrofit2.http.POST
 import retrofit2.http.Url
 import java.util.concurrent.TimeUnit
 
+@JvmSuppressWildcards
 interface WebService {
 
     companion object {
@@ -24,7 +24,8 @@ interface WebService {
                 .writeTimeout(1, TimeUnit.MINUTES)
                 .connectTimeout(1, TimeUnit.MINUTES)
                 .addInterceptor(HttpLoggingInterceptor { message ->
-                    Log.e("API = > ", message)
+                    if (BuildConfig.DEBUG)
+                        Log.e("API = > ", message)
                 }
                     .setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build()
@@ -41,13 +42,13 @@ interface WebService {
     fun sendSMSGET(@Url url: String): Call<ResponseBody>
 
     @POST
-    fun sendSMSPOST(@Url url: String, @Body request: JsonObject): Call<ResponseBody>
+    fun sendSMSPOST(@Url url: String, @Body request: Map<String, Any>): Call<ResponseBody>
 
 
     @GET
     fun verifySMSGET(@Url url: String): Call<ResponseBody>
 
     @POST
-    fun verifySMSPOST(@Url url: String, @Body request: JsonObject): Call<ResponseBody>
+    fun verifySMSPOST(@Url url: String, @Body request: Map<String, Any>): Call<ResponseBody>
 
 }
