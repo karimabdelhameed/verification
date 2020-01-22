@@ -1,4 +1,4 @@
-<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/_latestVersion'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg'></a>
+<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/0.0.5/link'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg?version=0.0.5'></a>
 # Verification Module
 <img src='https://miro.medium.com/max/3000/1*LCeoKUok8X5vfX4RS1FVhA.jpeg'>
 
@@ -19,6 +19,15 @@ So , we made verification module✌🏽to help you in that silly work.
 <li>Control digit box size & spaces.</li>
 <li>Control digit box height & text color.</li>
 
+# Sceenshots
+<p float="left">
+<img src='https://imgbbb.com/images/2020/01/18/1c5d2dc47c51318f1.png' width="250"/>
+<img src="https://imgbbb.com/images/2020/01/18/32ab32c79c96a8ad2.png" width="250"/>
+<img src="https://imgbbb.com/images/2020/01/18/267257def58765819.png" width="250"/>
+</p>
+
+<img src="https://media.giphy.com/media/XGDrYnfDdJZAVSTaUu/giphy.gif" width="250"/>
+
 # Download 
 Maven
 <pre>
@@ -26,14 +35,14 @@ Maven
 &lt;dependency&gt;
   &lt;groupId&gt;com.bluecrunch&lt;/groupId&gt;
   &lt;artifactId&gt;bluecrunchverification&lt;/artifactId&gt;
-  &lt;version&gt;0.0.4&lt;/version&gt;
+  &lt;version&gt;0.0.5&lt;/version&gt;
 &lt;/dependency&gt;
 </code>
 </pre>
 Gradle
 <pre>
 <code>
-implementation 'com.bluecrunch:bluecrunchverification:0.0.4'
+implementation 'com.bluecrunch:bluecrunchverification:0.0.5'
 </code>
 </pre>
 
@@ -53,11 +62,11 @@ You need to use the widget first in the XML layout of your verification layout.
             app:box_background="@drawable/line_shape"
             app:box_text_color="@color/colorAccent"
             app:box_space="7dp"
-            app:layout_constraintTop_toTopOf="parent" /&lt;
+            app:layout_constraintTop_toTopOf="parent" /&gt;
 </code>
 </pre>
-In your activity, just make a lateinit var from class called Integration like this :
-<pre><code>private lateinit var integration : Integration</code></pre>
+In your activity/fragment, just make a lateinit var from class called VerificationIntegration like this :
+<pre><code>private lateinit var integration : VerificationIntegration</code></pre>
 
 after that you need to build your integration object using builder pattern 🤠 like this: 
 
@@ -65,14 +74,14 @@ if you are using <strong>Firebase</strong> :
 <pre>
 <code>
 integration =
-                Integration
-                    .Builder()
-                    .setContext(this)
-                    .setIsFirebase(true)
-                    .setCountryCode("country code here")
-                    .setFCMCallBack(this)
-                    .setMobileNumber("mobile number here")
-                    .build()
+      VerificationIntegration
+          .Builder()
+          .setContext(this)
+          .setIsFirebase(true)
+          .setCountryCode("country code here")
+          .setFCMCallBack(this)
+          .setMobileNumber("mobile number here")
+          .build()
 </code>
 </pre>
 
@@ -80,7 +89,7 @@ and if you are using <strong>Server APIs</strong> :
 <pre>
 <code>
 integration =
-      Integration
+      VerificationIntegration
           .Builder()
           .setContext(this)
           .setIsFirebase(false)
