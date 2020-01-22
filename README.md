@@ -96,7 +96,7 @@ integration =
           .setIsSendMethodGet(false)
           .setSendRequestBody("request body as JsonObject") // if it is a @POST method .
            // Sample for <strong>@POST</strong> request
-           // val mRequest = TreeMap<String, Any>()
+           // val mRequest = TreeMap&lt;String, Any&gt;()
            // mRequest["to"] = "0000000000"
            // mRequest["message"] = "Welcome :D"
           .setWebserviceCallBack(this)
