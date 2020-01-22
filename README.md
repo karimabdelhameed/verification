@@ -1,4 +1,4 @@
-<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/_latestVersion'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg'></a>
+<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/0.0.5/link'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg?version=0.0.5'></a>
 # Verification Module
 <img src='https://miro.medium.com/max/3000/1*LCeoKUok8X5vfX4RS1FVhA.jpeg'>
 
@@ -35,14 +35,14 @@ Maven
 &lt;dependency&gt;
   &lt;groupId&gt;com.bluecrunch&lt;/groupId&gt;
   &lt;artifactId&gt;bluecrunchverification&lt;/artifactId&gt;
-  &lt;version&gt;0.0.4&lt;/version&gt;
+  &lt;version&gt;0.0.5&lt;/version&gt;
 &lt;/dependency&gt;
 </code>
 </pre>
 Gradle
 <pre>
 <code>
-implementation 'com.bluecrunch:bluecrunchverification:0.0.4'
+implementation 'com.bluecrunch:bluecrunchverification:0.0.5'
 </code>
 </pre>
 
@@ -65,8 +65,8 @@ You need to use the widget first in the XML layout of your verification layout.
             app:layout_constraintTop_toTopOf="parent" /&gt;
 </code>
 </pre>
-In your activity/fragment, just make a lateinit var from class called Integration like this :
-<pre><code>private lateinit var integration : Integration</code></pre>
+In your activity/fragment, just make a lateinit var from class called VerificationIntegration like this :
+<pre><code>private lateinit var integration : VerificationIntegration</code></pre>
 
 after that you need to build your integration object using builder pattern 🤠 like this: 
 
@@ -74,7 +74,7 @@ if you are using <strong>Firebase</strong> :
 <pre>
 <code>
 integration =
-      Integration
+      VerificationIntegration
           .Builder()
           .setContext(this)
           .setIsFirebase(true)
@@ -89,7 +89,7 @@ and if you are using <strong>Server APIs</strong> :
 <pre>
 <code>
 integration =
-      Integration
+      VerificationIntegration
           .Builder()
           .setContext(this)
           .setIsFirebase(false)
