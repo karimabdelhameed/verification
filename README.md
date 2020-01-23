@@ -96,8 +96,9 @@ integration =
           .setIsSendMethodGet(false)
           .setSendRequestBody("request body as JsonObject") // if it is a @POST method .
            // Sample for <strong>@POST</strong> request
-           // val mRequest = JsonObject()
-           // mRequest.addProperty("mobile", "00000000000")
+           // val mRequest = TreeMap&lt;String, Any&gt;()
+           // mRequest["to"] = "0000000000"
+           // mRequest["message"] = "Welcome :D"
           .setWebserviceCallBack(this)
           .setSendRequestURL("web server url with end point here") // https://IP/sendSMS/ {params} . if using @GET
           // Sample for <strong>@GET</strong> request in the url 
