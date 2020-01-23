@@ -11,7 +11,7 @@ ext {
 
     publishedGroupId = 'com.bluecrunch' // Group ID of the SDK which will be added in implementation line of gradle
     artifact = 'bluecrunchverification' // Artifact ID of the SDK which will be added in implementation line of gradle
-    libraryVersion = '0.0.5' // Version of the library you created in Bintray
+    libraryVersion = '0.0.6' // Version of the library you created in Bintray
 
     libraryName = 'bluecrunchverification' // It is generally the module name
     libraryDescription = 'Verification module to use Firebase /Server APIs for SMS send/verify in your app.' // Small description of the library
