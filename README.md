@@ -75,8 +75,7 @@ if you are using <strong>Firebase</strong> :
 <code>
 integration =
       VerificationIntegration
-          .Builder()
-          .setContext(this)
+          .Builder(this)
           .setIsFirebase(true)
           .setCountryCode("country code here")
           .setFCMCallBack(this)
@@ -90,8 +89,7 @@ and if you are using <strong>Server APIs</strong> :
 <code>
 integration =
       VerificationIntegration
-          .Builder()
-          .setContext(this)
+          .Builder(this)
           .setIsFirebase(false)
           .setIsSendMethodGet(false)
           .setSendRequestBody("request body as JsonObject") // if it is a @POST method .
