@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
                     .setIsFirebase(true)
                     .setCountryCode("+2")
                     .setFCMCallBack(this)
-                    .setMobileNumber("")
+                    .setMobileNumber("01000290477")
                     .build()
             verificationIntegration.sendFCMSms()
         }

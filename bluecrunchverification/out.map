@@ -1,6 +1,6 @@
 # compiler: R8
 # compiler_version: 1.5.64
-# pg_map_id: 75be7e8
+# pg_map_id: 8c66acc
 androidx.databinding.library.baseAdapters.BR -> androidx.databinding.library.baseAdapters.BR:
     1:1:void <init>():3:3 -> <init>
 com.bluecrunch.bluecrunchverification.BR -> com.bluecrunch.bluecrunchverification.BR:
@@ -171,7 +171,9 @@ com.bluecrunch.bluecrunchverification.VerificationView -> com.bluecrunch.bluecru
     4:4:void inflate():136:136 -> b
     1:2:void initTextCodeObservables():144:145 -> c
     1:1:void listenForTextChanges():151:151 -> d
-    1:20:void setDigitsText():177:196 -> e
+    1:21:void setDigitsText():177:197 -> e
+    22:26:void setDigitsText():185:189 -> e
+    27:30:void setDigitsText():179:182 -> e
     1:9:void setNumberOfDigits():121:129 -> f
     10:11:void setNumberOfDigits():126:127 -> f
     1:1:int getBoxBG():19:19 -> getBoxBG
@@ -181,6 +183,9 @@ com.bluecrunch.bluecrunchverification.VerificationView -> com.bluecrunch.bluecru
     1:1:int getBoxTextColor():21:21 -> getBoxTextColor
     1:1:androidx.databinding.ObservableField[] getTextCodeObservables():24:24 -> getTextCodeObservables
     1:1:java.lang.String getVerificationCodeText():23:23 -> getVerificationCodeText
+    1:21:void invalidateDigits():204:224 -> invalidateDigits
+    22:26:void invalidateDigits():212:216 -> invalidateDigits
+    27:30:void invalidateDigits():206:209 -> invalidateDigits
     1:1:void setBoxBG(int):19:19 -> setBoxBG
     1:1:void setBoxCount(int):18:18 -> setBoxCount
     1:1:void setBoxHeight(float):20:20 -> setBoxHeight

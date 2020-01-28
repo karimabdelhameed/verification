@@ -174,26 +174,55 @@ open class VerificationView : ConstraintLayout {
 
     /** Automatic set digits in every box **/
     private fun setDigitsText() {
-        if(boxCount == 4){
-            verification_1_textView.text = verificationCodeText[0].toString()
-            verification_2_textView.text = verificationCodeText[1].toString()
-            verification_3_textView.text = verificationCodeText[2].toString()
-            verification_4_textView.text = verificationCodeText[3].toString()
+        when (boxCount) {
+            4 -> {
+                verification_1_textView.text = verificationCodeText[0].toString()
+                verification_2_textView.text = verificationCodeText[1].toString()
+                verification_3_textView.text = verificationCodeText[2].toString()
+                verification_4_textView.text = verificationCodeText[3].toString()
+            }
+            5 -> {
+                verification_1_textView.text = verificationCodeText[0].toString()
+                verification_2_textView.text = verificationCodeText[1].toString()
+                verification_3_textView.text = verificationCodeText[2].toString()
+                verification_4_textView.text = verificationCodeText[3].toString()
+                verification_5_textView.text = verificationCodeText[4].toString()
+            }
+            6 -> {
+                verification_1_textView.text = verificationCodeText[0].toString()
+                verification_2_textView.text = verificationCodeText[1].toString()
+                verification_3_textView.text = verificationCodeText[2].toString()
+                verification_4_textView.text = verificationCodeText[3].toString()
+                verification_5_textView.text = verificationCodeText[4].toString()
+                verification_6_textView.text = verificationCodeText[5].toString()
+            }
         }
-        else if(boxCount == 5){
-            verification_1_textView.text = verificationCodeText[0].toString()
-            verification_2_textView.text = verificationCodeText[1].toString()
-            verification_3_textView.text = verificationCodeText[2].toString()
-            verification_4_textView.text = verificationCodeText[3].toString()
-            verification_5_textView.text = verificationCodeText[4].toString()
-        }
-        else if(boxCount == 6){
-            verification_1_textView.text = verificationCodeText[0].toString()
-            verification_2_textView.text = verificationCodeText[1].toString()
-            verification_3_textView.text = verificationCodeText[2].toString()
-            verification_4_textView.text = verificationCodeText[3].toString()
-            verification_5_textView.text = verificationCodeText[4].toString()
-            verification_6_textView.text = verificationCodeText[5].toString()
+    }
+
+    /** Automatic empty digits in every box **/
+    fun invalidateDigits(){
+        when (boxCount) {
+            4 -> {
+                verification_1_textView.text = ""
+                verification_2_textView.text = ""
+                verification_3_textView.text = ""
+                verification_4_textView.text = ""
+            }
+            5 -> {
+                verification_1_textView.text = ""
+                verification_2_textView.text = ""
+                verification_3_textView.text = ""
+                verification_4_textView.text = ""
+                verification_5_textView.text = ""
+            }
+            6 -> {
+                verification_1_textView.text = ""
+                verification_2_textView.text = ""
+                verification_3_textView.text = ""
+                verification_4_textView.text = ""
+                verification_5_textView.text = ""
+                verification_6_textView.text = ""
+            }
         }
     }
 }
