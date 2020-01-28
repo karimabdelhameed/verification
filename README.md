@@ -1,4 +1,4 @@
-<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/0.0.5/link'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg?version=0.0.5'></a>
+<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/0.0.7/link'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg?version=0.0.7'></a>
 # Verification Module
 <img src='https://miro.medium.com/max/3000/1*LCeoKUok8X5vfX4RS1FVhA.jpeg'>
 
@@ -35,14 +35,14 @@ Maven
 &lt;dependency&gt;
   &lt;groupId&gt;com.bluecrunch&lt;/groupId&gt;
   &lt;artifactId&gt;bluecrunchverification&lt;/artifactId&gt;
-  &lt;version&gt;0.0.5&lt;/version&gt;
+  &lt;version&gt;0.0.6&lt;/version&gt;
 &lt;/dependency&gt;
 </code>
 </pre>
 Gradle
 <pre>
 <code>
-implementation 'com.bluecrunch:bluecrunchverification:0.0.5'
+implementation 'com.bluecrunch:bluecrunchverification:0.0.7'
 </code>
 </pre>
 
@@ -75,8 +75,7 @@ if you are using <strong>Firebase</strong> :
 <code>
 integration =
       VerificationIntegration
-          .Builder()
-          .setContext(this)
+          .Builder(this)
           .setIsFirebase(true)
           .setCountryCode("country code here")
           .setFCMCallBack(this)
@@ -90,8 +89,7 @@ and if you are using <strong>Server APIs</strong> :
 <code>
 integration =
       VerificationIntegration
-          .Builder()
-          .setContext(this)
+          .Builder(this)
           .setIsFirebase(false)
           .setIsSendMethodGet(false)
           .setSendRequestBody("request body as JsonObject") // if it is a @POST method .
