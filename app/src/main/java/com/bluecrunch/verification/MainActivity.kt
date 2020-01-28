@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        sendSMSAPI()
+        sendCodeFCM()
 //        verifyCodeFCM()
     }
 
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
                     .setIsFirebase(true)
                     .setCountryCode("+2")
                     .setFCMCallBack(this)
-                    .setMobileNumber("01000290477")
+                    .setMobileNumber("")
                     .build()
             verificationIntegration.sendFCMSms()
         }

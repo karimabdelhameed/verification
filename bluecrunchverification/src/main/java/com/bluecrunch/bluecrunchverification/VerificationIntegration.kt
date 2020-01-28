@@ -301,14 +301,16 @@ open class VerificationIntegration private constructor(
                 if (integration.fcmCallBack == null)
                     throw RuntimeException("Firebase callback must be set!")
             }
-            check(!isFirebase && integration.webServiceCallBack == null)
-            { "Web service callback must be set!" }
+            else {
+                if (integration.webServiceCallBack == null)
+                    throw RuntimeException("Web service callback must be set!")
 
-            check(isSendMethodGet && integration.sendRequestURL.isEmpty())
-            { "Request URL must be set!" }
+                if (isSendMethodGet && integration.sendRequestURL.isEmpty())
+                    throw RuntimeException("Request URL must be set!")
 
-            check(!isSendMethodGet && integration.sendRequestBody.isNullOrEmpty()) {
-                { "Body request must be set!" }
+                if (!isSendMethodGet && integration.sendRequestBody.isNullOrEmpty()) {
+                    throw RuntimeException("Body request must be set!")
+                }
             }
             return VerificationIntegration(context, this)
         }
