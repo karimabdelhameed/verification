@@ -35,7 +35,7 @@ Maven
 &lt;dependency&gt;
   &lt;groupId&gt;com.bluecrunch&lt;/groupId&gt;
   &lt;artifactId&gt;bluecrunchverification&lt;/artifactId&gt;
-  &lt;version&gt;0.0.6&lt;/version&gt;
+  &lt;version&gt;0.0.7&lt;/version&gt;
 &lt;/dependency&gt;
 </code>
 </pre>
