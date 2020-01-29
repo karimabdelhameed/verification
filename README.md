@@ -133,7 +133,8 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 | sendSMSGET  | This method is used to send SMS using API Webservice @GET Method.  |
 | sendSMSPOST  | This method is used to send SMS using API Webservice @POST Method.  |
 | verifySMSGET(verifyURL: String)  | This method is used to verify SMS using API Webservice @GET Method  |
-| verifySMSPOST(verifyURL: String, request: TreeMap<String, Any>)  | This method is used to verify SMS using API Webservice @POST Method |
+| verifySMSPOST(verifyURL: String,
+request: TreeMap<String, Any>)  | This method is used to verify SMS using API Webservice @POST Method |
 | FCMCallBack  | This interface is used to implement firebase send & verify callback methods. |
 | WebServiceCallBack  | This interface is used to implement Webservice APIs send & verify callback methods. |
 
