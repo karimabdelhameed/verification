@@ -117,8 +117,26 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 # Key Usage for the Verification Widget
 | Attribute  | Usage |
 | ------------- | ------------- |
-| box_count  | 4,5 or 6 to define number of boxs in the widget  |
-| Content Cell  | Content Cell  |
+| box_count  | 4,5 or 6 to define number of boxs in the widget.  |
+| box_height  | Define single box height in Dp.  |
+| box_background  | Define background shape for each box (i.e. custom drawable like oval , rectanngle , line ,...).  |
+| box_text_color  | Define text color in each box.  |
+| box_space  | Define spaces between each box in the widget.  |
+
+
+# Key Usage for the Verification Integration
+| Method  | Usage |
+| ------------- | ------------- |
+| sendFCMSms  | This method is used to send SMS using firebase. |
+| reSendFCMSms  | This method is used to re-send SMS using firebase.  |
+| verifyFCMPhoneNumberWithCode  | This method is used to verify mobile number with verification code using firebase.  |
+| sendSMSGET  | This method is used to send SMS using API Webservice @GET Method.  |
+| sendSMSPOST  | This method is used to send SMS using API Webservice @POST Method.  |
+| verifySMSGET(verifyURL: String)  | This method is used to verify SMS using API Webservice @GET Method  |
+| verifySMSPOST(verifyURL: String, request: TreeMap<String, Any>)  | This method is used to verify SMS using API Webservice @POST Method |
+| FCMCallBack  | This interface is used to implement firebase send & verify callback methods. |
+| WebServiceCallBack  | This interface is used to implement Webservice APIs send & verify callback methods. |
+
 
 # Special thanks 
 @sherifMohammed95 , and
