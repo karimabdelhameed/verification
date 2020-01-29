@@ -114,6 +114,12 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 </code>
 </pre>
 
+# Key Usage for the Verification Widget
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 # Special thanks 
 @sherifMohammed95 , and
 to all <a href='https://www.bluecrunch.com/'>Bluecrunch</a> team specially the mobile team 💪🏻.
