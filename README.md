@@ -115,9 +115,9 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 </pre>
 
 # Key Usage for the Verification Widget
-| First Header  | Second Header |
+| Attribute  | Usage |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
+| box_count  | 4,5 or 6 to define number of boxs in the widget  |
 | Content Cell  | Content Cell  |
 
 # Special thanks 
