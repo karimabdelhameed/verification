@@ -118,7 +118,7 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 | Attribute  | Usage |
 | ------------- | ------------- |
 | box_count  | 4,5 or 6 to define number of boxs in the widget.  |
-| box_height  | Define single box height in Dp.  |
+| box_height  | Define single box height in dp.  |
 | box_background  | Define background shape for each box (i.e. custom drawable like oval , rectanngle , line ,...).  |
 | box_text_color  | Define text color in each box.  |
 | box_space  | Define spaces between each box in the widget.  |
