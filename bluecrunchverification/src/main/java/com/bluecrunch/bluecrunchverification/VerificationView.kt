@@ -24,7 +24,9 @@ open class VerificationView : ConstraintLayout {
     var textCodeObservables =
         arrayOfNulls<ObservableField<String>>(0)
 
-    /** Constructor with context **/
+    /**
+     * @param context:context for your activity
+     */
     constructor(context: Context?) : super(context) {
         mContext = context
         inflate()
@@ -34,7 +36,10 @@ open class VerificationView : ConstraintLayout {
         listenForTextChanges()
     }
 
-    /** Constructor with context and attributes **/
+    /**
+     * @param context:context for your activity
+     * @param attrs:attributeSet for your custom style
+     */
     @SuppressLint("Recycle")
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
         mContext = context
@@ -47,7 +52,10 @@ open class VerificationView : ConstraintLayout {
     }
 
 
-    /** Init styles attrs from styleable file **/
+    /**
+     * @param attrs:attributeSet for your custom style
+     * @return
+     */
     private fun initStyleables(attrs: AttributeSet?) {
         val typeArr = context?.obtainStyledAttributes(
             attrs
@@ -70,6 +78,9 @@ open class VerificationView : ConstraintLayout {
         typeArr.recycle()
     }
 
+    /**
+     * This method is user to bing the views,
+     */
     private fun bindViews() {
         /** set custom drawable to code layout **/
         code_1_layout.background = mContext?.getDrawable(boxBG)
@@ -116,7 +127,9 @@ open class VerificationView : ConstraintLayout {
                 MarginLayoutParams)?.setMargins(boxSpace, 0, 0, 0)
     }
 
-    /** Init number of digits for code layout **/
+    /**
+     * This method is used to init number of digits for code layout
+     */
     private fun setNumberOfDigits() {
         val fArray = arrayOfNulls<InputFilter>(1)
         fArray[0] = InputFilter.LengthFilter(boxCount)
@@ -130,7 +143,9 @@ open class VerificationView : ConstraintLayout {
         }
     }
 
-    /** Inflate verification layout **/
+    /**
+     * This method is used to inflate verification layout
+     */
     private fun inflate() {
         val layoutInflater = LayoutInflater.from(context)
         layoutInflater.inflate(
@@ -139,14 +154,18 @@ open class VerificationView : ConstraintLayout {
         )
     }
 
-    /** Init text codes for 1st time **/
+    /**
+     * This method is used to init text codes for 1st time
+     */
     private fun initTextCodeObservables() {
         for (i in 0 until boxCount) {
             textCodeObservables[i] = ObservableField("")
         }
     }
 
-    /** Listen for text changes in code editText **/
+    /**
+     * This method is used to listen for text changes in code editText
+     */
     private fun listenForTextChanges() {
         typed_editText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(
@@ -172,7 +191,10 @@ open class VerificationView : ConstraintLayout {
         })
     }
 
-    /** Automatic set digits in every box **/
+
+    /**
+     * This method is used to automatic set digits in every box
+     */
     private fun setDigitsText() {
         when (boxCount) {
             4 -> {
@@ -199,7 +221,9 @@ open class VerificationView : ConstraintLayout {
         }
     }
 
-    /** Automatic empty digits in every box **/
+    /**
+     * This method is used to empty digits in every box
+     */
     fun invalidateDigits(){
         when (boxCount) {
             4 -> {

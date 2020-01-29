@@ -45,6 +45,9 @@ open class VerificationIntegration private constructor(
         this.webServiceCallBack = builder.webServiceCallBack
     }
 
+    /**
+     * This method is used to send SMS using firebase
+     */
     fun sendFCMSms() {
         mCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
@@ -74,6 +77,9 @@ open class VerificationIntegration private constructor(
         verify(mobileNumber)
     }
 
+    /**
+     * This method is used to re-send SMS using firebase
+     */
     fun reSendFCMSms() {
         mCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
@@ -101,6 +107,10 @@ open class VerificationIntegration private constructor(
         verifyResend(mobileNumber, resendToken)
     }
 
+    /**
+     * @param phoneNumber: phone-number used in verify process using firebase
+     * This method is used to verify phone number using firebase
+     */
     private fun verify(phoneNumber: String) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
             "${countryCode}${phoneNumber}",
@@ -111,6 +121,9 @@ open class VerificationIntegration private constructor(
         )
     }
 
+    /**
+     * This method is used upon verifying mobile number after resend code using firebase
+     */
     private fun verifyResend(
         phoneNumber: String,
         resendToken: PhoneAuthProvider.ForceResendingToken
@@ -125,6 +138,10 @@ open class VerificationIntegration private constructor(
         )
     }
 
+    /**
+     * @param credential : PhoneAuthCredential instance to be used in sign-in to firebase
+     * This method is used to sign-in with phone credentials using firebase
+     */
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         mAuth.signInWithCredential(credential).addOnCompleteListener(context as Activity)
         { task ->
@@ -149,6 +166,10 @@ open class VerificationIntegration private constructor(
     }
 
 
+    /**
+     * @param verificationCode : verification code number to be verified using firebase
+     * This method is used to verify mobile number with verification code using firebase
+     */
     fun verifyFCMPhoneNumberWithCode(verificationCode: String) {
         val credential = PhoneAuthProvider
             .getCredential(verificationID, verificationCode)
@@ -156,6 +177,9 @@ open class VerificationIntegration private constructor(
         signInWithPhoneAuthCredential(credential)
     }
 
+    /**
+     * This method is used to send SMS using API Webservice @GET Method
+     */
     fun sendSMSGET() {
         val webService = WebService.retrofit.create(WebService::class.java)
         val call = webService.sendSMSGET(sendRequestURL)
@@ -177,6 +201,9 @@ open class VerificationIntegration private constructor(
         })
     }
 
+    /**
+     * This method is used to send SMS using API Webservice @POST Method
+     */
     fun sendSMSPOST() {
         val webService = WebService.retrofit.create(WebService::class.java)
         val call = webService.sendSMSPOST(sendRequestURL, sendRequestBody)
@@ -198,6 +225,11 @@ open class VerificationIntegration private constructor(
         })
     }
 
+    /**
+     * @param verifyURL : url for the verify sms web service end point @GET Method
+     * @sample verifyURL: https://www.myAwesomeWebServiceVerifyGetMethod?mobile=000000000&code=123456
+     * This method is used to verify SMS using API Webservice @GET Method
+     */
     fun verifySMSGET(verifyURL: String) {
         val webService = WebService.retrofit.create(WebService::class.java)
         val call = webService.verifySMSGET(verifyURL)
@@ -219,6 +251,16 @@ open class VerificationIntegration private constructor(
         })
     }
 
+    /**
+     * @param verifyURL : url for the verify sms web service end point @POST Method
+     * @param request : TreeMap<String, Any>() holds your verify post request
+     * @sample verifyURL : https://www.myAwesomeWebServiceVerifyPOSTMethod
+     * @sample request :
+     * val mRequest = TreeMap<String, Any>()
+     * mRequest["to"] = "201005140750"
+     * mRequest["message"] = "Welcome :D"
+     * This method is used to verify SMS using API Webservice @POST Method
+     */
     fun verifySMSPOST(verifyURL: String, request: TreeMap<String, Any>) {
         val webService = WebService.retrofit.create(WebService::class.java)
         val call = webService.verifySMSPOST(verifyURL, request)
@@ -240,6 +282,9 @@ open class VerificationIntegration private constructor(
         })
     }
 
+    /**
+     * @param context : Activity context used in builder pattern
+     */
     class Builder(val context: FragmentActivity) {
         var isFirebase = true
             private set
@@ -317,6 +362,9 @@ open class VerificationIntegration private constructor(
     }
 }
 
+/**
+ * This interface is used while using FCM Send & Verification Methods
+ */
 interface FCMCallBack {
     fun onFCMVerifiedSuccess()
     fun onFCMCodeSent()
@@ -324,6 +372,9 @@ interface FCMCallBack {
     fun onFCMVerificationCodeError()
 }
 
+/**
+ * This interface is used while using Webservice APIs Send & Verification Methods
+ */
 interface WebServiceCallBack {
     fun onWebServiceVerifiedSuccess(responseBody: ResponseBody?)
     fun onWebServiceFailedWithErrorBody(errorBody: ResponseBody)
