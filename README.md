@@ -1,4 +1,4 @@
-<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/0.0.8/link'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg?version=0.0.8'></a>
+<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/0.0.9/link'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg?version=0.0.9'></a>
 # Verification Module
 <img src='https://miro.medium.com/max/3000/1*LCeoKUok8X5vfX4RS1FVhA.jpeg'>
 
@@ -18,6 +18,7 @@ So , we made verification module✌🏽to help you in that silly work.
 <li>Control box background (i.e. custom bg like rounded box or line ,...).</li>
 <li>Control digit box size & spaces.</li>
 <li>Control digit box height & text color.</li>
+<li>Add custom bg for each box when focused.</li>
 
 # Sceenshots
 <p float="left">
@@ -35,14 +36,14 @@ Maven
 &lt;dependency&gt;
   &lt;groupId&gt;com.bluecrunch&lt;/groupId&gt;
   &lt;artifactId&gt;bluecrunchverification&lt;/artifactId&gt;
-  &lt;version&gt;0.0.8&lt;/version&gt;
+  &lt;version&gt;0.0.9&lt;/version&gt;
 &lt;/dependency&gt;
 </code>
 </pre>
 Gradle
 <pre>
 <code>
-implementation 'com.bluecrunch:bluecrunchverification:0.0.8'
+implementation 'com.bluecrunch:bluecrunchverification:0.0.9'
 </code>
 </pre>
 
@@ -58,6 +59,7 @@ You need to use the widget first in the XML layout of your verification layout.
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
             app:box_count="6"
+            app:box_background_focused="@drawable/verification_box_focused_bg"
             app:box_height="50dp"
             app:box_background="@drawable/line_shape"
             app:box_text_color="@color/colorAccent"
@@ -122,6 +124,7 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 | box_background  | Define background shape for each box (i.e. custom drawable like oval , rectanngle , line ,...).  |
 | box_text_color  | Define text color in each box.  |
 | box_space  | Define spaces between each box in the widget.  |
+| app:box_background_focused | Add custom bg for each box when focused.|
 
 
 # Key Usage for the Verification Integration
