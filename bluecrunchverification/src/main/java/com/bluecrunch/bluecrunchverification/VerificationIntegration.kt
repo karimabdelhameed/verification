@@ -1,6 +1,7 @@
 package com.bluecrunch.bluecrunchverification
 
 import android.app.Activity
+import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -52,7 +53,6 @@ open class VerificationIntegration private constructor(
         mCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
                 signInWithPhoneAuthCredential(phoneAuthCredential)
-                FirebaseUtils.getUserAuthId()
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
@@ -148,10 +148,7 @@ open class VerificationIntegration private constructor(
 
             if (task.isSuccessful) {
                 try {
-                    if (fcmCallBack != null) {
-                        fcmCallBack?.onFCMVerifiedSuccess()
-                    }
-                    FirebaseAuth.getInstance().signOut()
+                    getUserAuthId()
                 } catch (ex: Exception) {
                     if (fcmCallBack != null) {
                         fcmCallBack?.onFCMError(ex.localizedMessage!!)
@@ -165,7 +162,25 @@ open class VerificationIntegration private constructor(
         }
     }
 
-
+    /**
+     * This method is used to get idToken after successful login with firebase
+     */
+    private fun getUserAuthId() {
+        val mUser = FirebaseAuth.getInstance().currentUser ?: return
+        mUser.getIdToken(true)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val idToken = task.result!!.token
+                    if (fcmCallBack != null) {
+                        fcmCallBack?.onFCMVerifiedSuccess(idToken)
+                    }
+                    FirebaseAuth.getInstance().signOut()
+                } else {
+                    Log.e("error", "error getting auth id")
+                }
+            }
+    }
+    
     /**
      * @param verificationCode : verification code number to be verified using firebase
      * This method is used to verify mobile number with verification code using firebase
@@ -366,7 +381,7 @@ open class VerificationIntegration private constructor(
  * This interface is used while using FCM Send & Verification Methods
  */
 interface FCMCallBack {
-    fun onFCMVerifiedSuccess()
+    fun onFCMVerifiedSuccess(idToken:String?)
     fun onFCMCodeSent()
     fun onFCMError(error: String)
     fun onFCMVerificationCodeError()

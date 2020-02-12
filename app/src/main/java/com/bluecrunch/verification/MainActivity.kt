@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         sendCodeFCM()
-//        verifyCodeFCM()
     }
 
     private fun sendCodeFCM() {
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity(), FCMCallBack, WebServiceCallBack {
         }
     }
 
-    override fun onFCMVerifiedSuccess() {
+    override fun onFCMVerifiedSuccess(idToken :String?) {
         Log.e("Success : ", "FCM Verified success")
     }
 

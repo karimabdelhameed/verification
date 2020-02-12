@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.databinding.ObservableField
 import kotlinx.android.synthetic.main.verification_view.view.*
 
 open class VerificationView : ConstraintLayout {
@@ -17,13 +16,11 @@ open class VerificationView : ConstraintLayout {
 
     var boxCount = 4
     var boxBG = 0
+    var boxBGFocused = 0
     var boxHeight = 0f
     var boxTextColor = 0
     var boxSpace = 0
     var verificationCodeText = ""
-    var textCodeObservables =
-        arrayOfNulls<ObservableField<String>>(0)
-
     /**
      * @param context:context for your activity
      */
@@ -32,7 +29,6 @@ open class VerificationView : ConstraintLayout {
         inflate()
         bindViews()
         setNumberOfDigits()
-        initTextCodeObservables()
         listenForTextChanges()
     }
 
@@ -47,7 +43,6 @@ open class VerificationView : ConstraintLayout {
         inflate()
         bindViews()
         setNumberOfDigits()
-        initTextCodeObservables()
         listenForTextChanges()
     }
 
@@ -74,7 +69,10 @@ open class VerificationView : ConstraintLayout {
         boxSpace = typeArr.getDimension(R.styleable.VerificationView_box_space, 10f)
             .toInt()
 
-        textCodeObservables = arrayOfNulls(boxCount)
+        boxBGFocused = typeArr.getResourceId(
+            R.styleable.VerificationView_box_background_focused,
+            boxBG
+        )
         typeArr.recycle()
     }
 
@@ -155,15 +153,6 @@ open class VerificationView : ConstraintLayout {
     }
 
     /**
-     * This method is used to init text codes for 1st time
-     */
-    private fun initTextCodeObservables() {
-        for (i in 0 until boxCount) {
-            textCodeObservables[i] = ObservableField("")
-        }
-    }
-
-    /**
      * This method is used to listen for text changes in code editText
      */
     private fun listenForTextChanges() {
@@ -181,10 +170,8 @@ open class VerificationView : ConstraintLayout {
                 while (verificationCodeText.length < boxCount) {
                     verificationCodeText += " "
                 }
-                for (j in verificationCodeText.indices) {
-                    textCodeObservables[j]?.set("${verificationCodeText[j]}")
-                    setDigitsText()
-                }
+                setDigitsText()
+                enableFocusedOption()
             }
 
             override fun afterTextChanged(editable: Editable) {}
@@ -224,13 +211,14 @@ open class VerificationView : ConstraintLayout {
     /**
      * This method is used to empty digits in every box
      */
-    fun invalidateDigits(){
+    fun invalidateDigits() {
         when (boxCount) {
             4 -> {
                 verification_1_textView.text = ""
                 verification_2_textView.text = ""
                 verification_3_textView.text = ""
                 verification_4_textView.text = ""
+                setDrawableFocusedFor4Digits()
             }
             5 -> {
                 verification_1_textView.text = ""
@@ -238,6 +226,7 @@ open class VerificationView : ConstraintLayout {
                 verification_3_textView.text = ""
                 verification_4_textView.text = ""
                 verification_5_textView.text = ""
+                setDrawableFocusedFor5Digits()
             }
             6 -> {
                 verification_1_textView.text = ""
@@ -246,7 +235,86 @@ open class VerificationView : ConstraintLayout {
                 verification_4_textView.text = ""
                 verification_5_textView.text = ""
                 verification_6_textView.text = ""
+                setDrawableFocusedFor6Digits()
             }
         }
+    }
+
+    /**
+     * This method is used to add custom drawable to digits in every box when focused
+     */
+    private fun enableFocusedOption() {
+        when (boxCount) {
+            4 -> {
+                setDrawableFocusedFor4Digits()
+            }
+            5 -> {
+                setDrawableFocusedFor5Digits()
+            }
+            6 -> {
+                setDrawableFocusedFor6Digits()
+            }
+        }
+    }
+
+    /**
+     * This method is used to add custom drawable to 4-digits option in every box when focused
+     */
+    private fun setDrawableFocusedFor4Digits() {
+        code_1_layout.background = if (verificationCodeText[0].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_2_layout.background = if (verificationCodeText[1].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_3_layout.background = if (verificationCodeText[2].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_4_layout.background = if (verificationCodeText[3].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+    }
+
+    /**
+     * This method is used to add custom drawable to 5-digits option in every box when focused
+     */
+    private fun setDrawableFocusedFor5Digits() {
+        code_1_layout.background = if (verificationCodeText[0].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_2_layout.background = if (verificationCodeText[1].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_3_layout.background = if (verificationCodeText[2].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_4_layout.background = if (verificationCodeText[3].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_5_layout.background = if (verificationCodeText[4].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+    }
+
+    /**
+     * This method is used to add custom drawable to 6-digits option in every box when focused
+     */
+    private fun setDrawableFocusedFor6Digits() {
+        code_1_layout.background = if (verificationCodeText[0].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_2_layout.background = if (verificationCodeText[1].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_3_layout.background = if (verificationCodeText[2].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_4_layout.background = if (verificationCodeText[3].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_5_layout.background = if (verificationCodeText[4].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
+
+        code_6_layout.background = if (verificationCodeText[5].toString().trim().isEmpty())
+            mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
     }
 }

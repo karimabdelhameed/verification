@@ -22,8 +22,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
             app:box_count="6"
+            app:box_background_focused="@drawable/verification_box_focused_bg"
             app:box_height="50dp"
-            app:box_background="@drawable/line_shape"
             app:box_text_color="@color/colorAccent"
             app:box_space="7dp"
             app:layout_constraintTop_toTopOf="parent" />
