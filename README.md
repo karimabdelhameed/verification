@@ -124,7 +124,7 @@ Finally 🥳, you just need to call send SMS or verify SMS methods :
 | box_background  | Define background shape for each box (i.e. custom drawable like oval , rectanngle , line ,...).  |
 | box_text_color  | Define text color in each box.  |
 | box_space  | Define spaces between each box in the widget.  |
-| app:box_background_focused | Add custom bg for each box when focused.|
+| box_background_focused | Add custom bg for each box when focused.|
 
 
 # Key Usage for the Verification Integration
