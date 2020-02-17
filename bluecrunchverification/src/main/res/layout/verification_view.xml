@@ -9,6 +9,7 @@
         android:id="@+id/code_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layoutDirection="ltr"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -122,6 +123,8 @@
             android:background="@android:color/transparent"
             android:cursorVisible="false"
             android:inputType="number"
+            android:layoutDirection="ltr"
+            android:textDirection="ltr"
             android:textColor="@android:color/transparent"
             tools:ignore="LabelFor" />
     </FrameLayout>
