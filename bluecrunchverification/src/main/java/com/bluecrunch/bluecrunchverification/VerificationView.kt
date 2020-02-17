@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.verification_view.view.*
 
+
+
 open class VerificationView : ConstraintLayout {
 
     private var mContext: Context? = null
@@ -238,6 +240,7 @@ open class VerificationView : ConstraintLayout {
                 setDrawableFocusedFor6Digits()
             }
         }
+        verificationCodeText = ""
     }
 
     /**

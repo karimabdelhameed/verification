@@ -1,6 +1,6 @@
 # compiler: R8
 # compiler_version: 1.5.64
-# pg_map_id: 97ebdd9
+# pg_map_id: 80c386d
 androidx.databinding.library.baseAdapters.BR -> androidx.databinding.library.baseAdapters.BR:
     1:1:void <init>():3:3 -> <init>
 com.bluecrunch.bluecrunchverification.BR -> com.bluecrunch.bluecrunchverification.BR:
@@ -152,80 +152,80 @@ com.bluecrunch.bluecrunchverification.VerificationView -> com.bluecrunch.bluecru
     int boxBGFocused -> d
     int boxCount -> b
     int boxBG -> c
-    1:1:void <init>(android.content.Context):27:27 -> <init>
-    2:17:void <init>(android.content.Context):17:32 -> <init>
-    18:18:void <init>(android.content.Context,android.util.AttributeSet):40:40 -> <init>
-    19:48:void <init>(android.content.Context,android.util.AttributeSet):17:46 -> <init>
-    1:3:void initStyleables(android.util.AttributeSet):55:57 -> a
-    4:11:void initStyleables(android.util.AttributeSet):55:62 -> a
-    12:19:void initStyleables(android.util.AttributeSet):60:67 -> a
-    20:29:void initStyleables(android.util.AttributeSet):65:74 -> a
-    30:34:void initStyleables(android.util.AttributeSet):72:76 -> a
-    35:76:void bindViews():84:125 -> a
-    1:1:void access$enableFocusedOption(com.bluecrunch.bluecrunchverification.VerificationView):13:13 -> access$enableFocusedOption
-    1:1:void access$setDigitsText(com.bluecrunch.bluecrunchverification.VerificationView):13:13 -> access$setDigitsText
-    1:9:void enableFocusedOption():247:255 -> b
-    10:10:void enableFocusedOption():252:252 -> b
-    11:11:void enableFocusedOption():249:249 -> b
-    1:3:void inflate():148:150 -> c
-    4:4:void inflate():149:149 -> c
-    1:1:void listenForTextChanges():159:159 -> d
-    1:21:void setDigitsText():186:206 -> e
-    22:26:void setDigitsText():194:198 -> e
-    27:30:void setDigitsText():188:191 -> e
-    1:2:void setDrawableFocusedFor4Digits():264:265 -> f
-    3:7:void setDrawableFocusedFor4Digits():264:268 -> f
-    8:12:void setDrawableFocusedFor4Digits():267:271 -> f
-    13:17:void setDrawableFocusedFor4Digits():270:274 -> f
-    18:18:void setDrawableFocusedFor4Digits():273:273 -> f
-    19:19:void setDrawableFocusedFor4Digits():270:270 -> f
-    20:20:void setDrawableFocusedFor4Digits():267:267 -> f
-    21:21:void setDrawableFocusedFor4Digits():264:264 -> f
-    1:2:void setDrawableFocusedFor5Digits():281:282 -> g
-    3:7:void setDrawableFocusedFor5Digits():281:285 -> g
-    8:12:void setDrawableFocusedFor5Digits():284:288 -> g
-    13:17:void setDrawableFocusedFor5Digits():287:291 -> g
-    18:22:void setDrawableFocusedFor5Digits():290:294 -> g
-    23:23:void setDrawableFocusedFor5Digits():293:293 -> g
-    24:24:void setDrawableFocusedFor5Digits():290:290 -> g
-    25:25:void setDrawableFocusedFor5Digits():287:287 -> g
-    26:26:void setDrawableFocusedFor5Digits():284:284 -> g
-    27:27:void setDrawableFocusedFor5Digits():281:281 -> g
-    1:1:int getBoxBG():18:18 -> getBoxBG
-    1:1:int getBoxBGFocused():19:19 -> getBoxBGFocused
-    1:1:int getBoxCount():17:17 -> getBoxCount
-    1:1:float getBoxHeight():20:20 -> getBoxHeight
-    1:1:int getBoxSpace():22:22 -> getBoxSpace
-    1:1:int getBoxTextColor():21:21 -> getBoxTextColor
-    1:1:java.lang.String getVerificationCodeText():23:23 -> getVerificationCodeText
-    1:2:void setDrawableFocusedFor6Digits():302:303 -> h
-    3:7:void setDrawableFocusedFor6Digits():302:306 -> h
-    8:12:void setDrawableFocusedFor6Digits():305:309 -> h
-    13:17:void setDrawableFocusedFor6Digits():308:312 -> h
-    18:22:void setDrawableFocusedFor6Digits():311:315 -> h
-    23:27:void setDrawableFocusedFor6Digits():314:318 -> h
-    28:28:void setDrawableFocusedFor6Digits():317:317 -> h
-    29:29:void setDrawableFocusedFor6Digits():314:314 -> h
-    30:30:void setDrawableFocusedFor6Digits():311:311 -> h
-    31:31:void setDrawableFocusedFor6Digits():308:308 -> h
-    32:32:void setDrawableFocusedFor6Digits():305:305 -> h
-    33:33:void setDrawableFocusedFor6Digits():302:302 -> h
-    1:9:void setNumberOfDigits():132:140 -> i
-    10:11:void setNumberOfDigits():137:138 -> i
-    1:24:void invalidateDigits():215:238 -> invalidateDigits
-    25:30:void invalidateDigits():224:229 -> invalidateDigits
-    31:35:void invalidateDigits():217:221 -> invalidateDigits
-    1:1:void setBoxBG(int):18:18 -> setBoxBG
-    1:1:void setBoxBGFocused(int):19:19 -> setBoxBGFocused
-    1:1:void setBoxCount(int):17:17 -> setBoxCount
-    1:1:void setBoxHeight(float):20:20 -> setBoxHeight
-    1:1:void setBoxSpace(int):22:22 -> setBoxSpace
-    1:1:void setBoxTextColor(int):21:21 -> setBoxTextColor
-    1:1:void setVerificationCodeText(java.lang.String):23:23 -> setVerificationCodeText
+    1:1:void <init>(android.content.Context):29:29 -> <init>
+    2:17:void <init>(android.content.Context):19:34 -> <init>
+    18:18:void <init>(android.content.Context,android.util.AttributeSet):42:42 -> <init>
+    19:48:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    1:3:void initStyleables(android.util.AttributeSet):57:59 -> a
+    4:11:void initStyleables(android.util.AttributeSet):57:64 -> a
+    12:19:void initStyleables(android.util.AttributeSet):62:69 -> a
+    20:29:void initStyleables(android.util.AttributeSet):67:76 -> a
+    30:34:void initStyleables(android.util.AttributeSet):74:78 -> a
+    35:76:void bindViews():86:127 -> a
+    1:1:void access$enableFocusedOption(com.bluecrunch.bluecrunchverification.VerificationView):15:15 -> access$enableFocusedOption
+    1:1:void access$setDigitsText(com.bluecrunch.bluecrunchverification.VerificationView):15:15 -> access$setDigitsText
+    1:9:void enableFocusedOption():250:258 -> b
+    10:10:void enableFocusedOption():255:255 -> b
+    11:11:void enableFocusedOption():252:252 -> b
+    1:3:void inflate():150:152 -> c
+    4:4:void inflate():151:151 -> c
+    1:1:void listenForTextChanges():161:161 -> d
+    1:21:void setDigitsText():188:208 -> e
+    22:26:void setDigitsText():196:200 -> e
+    27:30:void setDigitsText():190:193 -> e
+    1:2:void setDrawableFocusedFor4Digits():267:268 -> f
+    3:7:void setDrawableFocusedFor4Digits():267:271 -> f
+    8:12:void setDrawableFocusedFor4Digits():270:274 -> f
+    13:17:void setDrawableFocusedFor4Digits():273:277 -> f
+    18:18:void setDrawableFocusedFor4Digits():276:276 -> f
+    19:19:void setDrawableFocusedFor4Digits():273:273 -> f
+    20:20:void setDrawableFocusedFor4Digits():270:270 -> f
+    21:21:void setDrawableFocusedFor4Digits():267:267 -> f
+    1:2:void setDrawableFocusedFor5Digits():284:285 -> g
+    3:7:void setDrawableFocusedFor5Digits():284:288 -> g
+    8:12:void setDrawableFocusedFor5Digits():287:291 -> g
+    13:17:void setDrawableFocusedFor5Digits():290:294 -> g
+    18:22:void setDrawableFocusedFor5Digits():293:297 -> g
+    23:23:void setDrawableFocusedFor5Digits():296:296 -> g
+    24:24:void setDrawableFocusedFor5Digits():293:293 -> g
+    25:25:void setDrawableFocusedFor5Digits():290:290 -> g
+    26:26:void setDrawableFocusedFor5Digits():287:287 -> g
+    27:27:void setDrawableFocusedFor5Digits():284:284 -> g
+    1:1:int getBoxBG():20:20 -> getBoxBG
+    1:1:int getBoxBGFocused():21:21 -> getBoxBGFocused
+    1:1:int getBoxCount():19:19 -> getBoxCount
+    1:1:float getBoxHeight():22:22 -> getBoxHeight
+    1:1:int getBoxSpace():24:24 -> getBoxSpace
+    1:1:int getBoxTextColor():23:23 -> getBoxTextColor
+    1:1:java.lang.String getVerificationCodeText():25:25 -> getVerificationCodeText
+    1:2:void setDrawableFocusedFor6Digits():305:306 -> h
+    3:7:void setDrawableFocusedFor6Digits():305:309 -> h
+    8:12:void setDrawableFocusedFor6Digits():308:312 -> h
+    13:17:void setDrawableFocusedFor6Digits():311:315 -> h
+    18:22:void setDrawableFocusedFor6Digits():314:318 -> h
+    23:27:void setDrawableFocusedFor6Digits():317:321 -> h
+    28:28:void setDrawableFocusedFor6Digits():320:320 -> h
+    29:29:void setDrawableFocusedFor6Digits():317:317 -> h
+    30:30:void setDrawableFocusedFor6Digits():314:314 -> h
+    31:31:void setDrawableFocusedFor6Digits():311:311 -> h
+    32:32:void setDrawableFocusedFor6Digits():308:308 -> h
+    33:33:void setDrawableFocusedFor6Digits():305:305 -> h
+    1:9:void setNumberOfDigits():134:142 -> i
+    10:11:void setNumberOfDigits():139:140 -> i
+    1:24:void invalidateDigits():217:240 -> invalidateDigits
+    25:30:void invalidateDigits():226:231 -> invalidateDigits
+    31:55:void invalidateDigits():219:243 -> invalidateDigits
+    1:1:void setBoxBG(int):20:20 -> setBoxBG
+    1:1:void setBoxBGFocused(int):21:21 -> setBoxBGFocused
+    1:1:void setBoxCount(int):19:19 -> setBoxCount
+    1:1:void setBoxHeight(float):22:22 -> setBoxHeight
+    1:1:void setBoxSpace(int):24:24 -> setBoxSpace
+    1:1:void setBoxTextColor(int):23:23 -> setBoxTextColor
+    1:1:void setVerificationCodeText(java.lang.String):25:25 -> setVerificationCodeText
 com.bluecrunch.bluecrunchverification.VerificationView$listenForTextChanges$1 -> com.bluecrunch.bluecrunchverification.VerificationView$listenForTextChanges$1:
     com.bluecrunch.bluecrunchverification.VerificationView this$0 -> a
-    1:1:void <init>(com.bluecrunch.bluecrunchverification.VerificationView):159:159 -> <init>
-    1:6:void onTextChanged(java.lang.CharSequence,int,int,int):169:174 -> onTextChanged
+    1:1:void <init>(com.bluecrunch.bluecrunchverification.VerificationView):161:161 -> <init>
+    1:6:void onTextChanged(java.lang.CharSequence,int,int,int):171:176 -> onTextChanged
 com.bluecrunch.bluecrunchverification.WebService$Companion -> com.bluecrunch.bluecrunchverification.WebService$Companion:
     com.bluecrunch.bluecrunchverification.WebService$Companion $$INSTANCE -> a
     1:1:void <clinit>():19:19 -> <clinit>
