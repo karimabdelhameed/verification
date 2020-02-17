@@ -1,6 +1,6 @@
 # compiler: R8
 # compiler_version: 1.5.64
-# pg_map_id: 80c386d
+# pg_map_id: dd5b2ee
 androidx.databinding.library.baseAdapters.BR -> androidx.databinding.library.baseAdapters.BR:
     1:1:void <init>():3:3 -> <init>
 com.bluecrunch.bluecrunchverification.BR -> com.bluecrunch.bluecrunchverification.BR:
@@ -212,9 +212,9 @@ com.bluecrunch.bluecrunchverification.VerificationView -> com.bluecrunch.bluecru
     33:33:void setDrawableFocusedFor6Digits():305:305 -> h
     1:9:void setNumberOfDigits():134:142 -> i
     10:11:void setNumberOfDigits():139:140 -> i
-    1:24:void invalidateDigits():217:240 -> invalidateDigits
-    25:30:void invalidateDigits():226:231 -> invalidateDigits
-    31:55:void invalidateDigits():219:243 -> invalidateDigits
+    1:25:void invalidateDigits():217:241 -> invalidateDigits
+    26:31:void invalidateDigits():227:232 -> invalidateDigits
+    32:36:void invalidateDigits():220:224 -> invalidateDigits
     1:1:void setBoxBG(int):20:20 -> setBoxBG
     1:1:void setBoxBGFocused(int):21:21 -> setBoxBGFocused
     1:1:void setBoxCount(int):19:19 -> setBoxCount

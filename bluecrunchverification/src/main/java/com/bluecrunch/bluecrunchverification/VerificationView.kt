@@ -214,6 +214,7 @@ open class VerificationView : ConstraintLayout {
      * This method is used to empty digits in every box
      */
     fun invalidateDigits() {
+        verificationCodeText = ""
         when (boxCount) {
             4 -> {
                 verification_1_textView.text = ""
@@ -240,7 +241,6 @@ open class VerificationView : ConstraintLayout {
                 setDrawableFocusedFor6Digits()
             }
         }
-        verificationCodeText = ""
     }
 
     /**
