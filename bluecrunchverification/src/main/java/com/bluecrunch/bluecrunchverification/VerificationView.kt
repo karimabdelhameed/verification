@@ -215,6 +215,7 @@ open class VerificationView : ConstraintLayout {
      */
     fun invalidateDigits() {
         verificationCodeText = ""
+        typed_editText.setText("")
         when (boxCount) {
             4 -> {
                 verification_1_textView.text = ""
@@ -264,16 +265,16 @@ open class VerificationView : ConstraintLayout {
      * This method is used to add custom drawable to 4-digits option in every box when focused
      */
     private fun setDrawableFocusedFor4Digits() {
-        code_1_layout.background = if (verificationCodeText[0].toString().trim().isEmpty())
+        code_1_layout.background = if (verification_1_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_2_layout.background = if (verificationCodeText[1].toString().trim().isEmpty())
+        code_2_layout.background = if (verification_2_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_3_layout.background = if (verificationCodeText[2].toString().trim().isEmpty())
+        code_3_layout.background = if (verification_3_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_4_layout.background = if (verificationCodeText[3].toString().trim().isEmpty())
+        code_4_layout.background = if (verification_4_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
     }
 
@@ -281,19 +282,19 @@ open class VerificationView : ConstraintLayout {
      * This method is used to add custom drawable to 5-digits option in every box when focused
      */
     private fun setDrawableFocusedFor5Digits() {
-        code_1_layout.background = if (verificationCodeText[0].toString().trim().isEmpty())
+        code_1_layout.background = if (verification_1_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_2_layout.background = if (verificationCodeText[1].toString().trim().isEmpty())
+        code_2_layout.background = if (verification_2_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_3_layout.background = if (verificationCodeText[2].toString().trim().isEmpty())
+        code_3_layout.background = if (verification_3_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_4_layout.background = if (verificationCodeText[3].toString().trim().isEmpty())
+        code_4_layout.background = if (verification_4_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_5_layout.background = if (verificationCodeText[4].toString().trim().isEmpty())
+        code_5_layout.background = if (verification_5_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
     }
@@ -302,22 +303,22 @@ open class VerificationView : ConstraintLayout {
      * This method is used to add custom drawable to 6-digits option in every box when focused
      */
     private fun setDrawableFocusedFor6Digits() {
-        code_1_layout.background = if (verificationCodeText[0].toString().trim().isEmpty())
+        code_1_layout.background = if (verification_1_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_2_layout.background = if (verificationCodeText[1].toString().trim().isEmpty())
+        code_2_layout.background = if (verification_2_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_3_layout.background = if (verificationCodeText[2].toString().trim().isEmpty())
+        code_3_layout.background = if (verification_3_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_4_layout.background = if (verificationCodeText[3].toString().trim().isEmpty())
+        code_4_layout.background = if (verification_4_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_5_layout.background = if (verificationCodeText[4].toString().trim().isEmpty())
+        code_5_layout.background = if (verification_5_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
 
-        code_6_layout.background = if (verificationCodeText[5].toString().trim().isEmpty())
+        code_6_layout.background = if (verification_6_textView.text.toString().trim().isEmpty())
             mContext?.getDrawable(boxBG) else mContext?.getDrawable(boxBGFocused)
     }
 }
