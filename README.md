@@ -1,4 +1,4 @@
-<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/0.0.9/link'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg?version=0.0.9'></a>
+<a href='https://bintray.com/bluecrunch/maven/bluecrunchverification/1.0.1/link'><img src='https://api.bintray.com/packages/bluecrunch/maven/bluecrunchverification/images/download.svg?version=1.0.1'></a>
 # Verification Module
 <img src='https://miro.medium.com/max/3000/1*LCeoKUok8X5vfX4RS1FVhA.jpeg'>
 
@@ -36,14 +36,14 @@ Maven
 &lt;dependency&gt;
   &lt;groupId&gt;com.bluecrunch&lt;/groupId&gt;
   &lt;artifactId&gt;bluecrunchverification&lt;/artifactId&gt;
-  &lt;version&gt;0.0.9&lt;/version&gt;
+  &lt;version&gt;1.0.1&lt;/version&gt;
 &lt;/dependency&gt;
 </code>
 </pre>
 Gradle
 <pre>
 <code>
-implementation 'com.bluecrunch:bluecrunchverification:0.0.9'
+implementation 'com.bluecrunch:bluecrunchverification:1.0.1'
 </code>
 </pre>
 
