@@ -186,10 +186,14 @@ open class VerificationIntegration private constructor(
      * This method is used to verify mobile number with verification code using firebase
      */
     fun verifyFCMPhoneNumberWithCode(verificationCode: String) {
-        val credential = PhoneAuthProvider
-            .getCredential(verificationID, verificationCode)
+        try{
+            val credential = PhoneAuthProvider
+                .getCredential(verificationID, verificationCode)
 
-        signInWithPhoneAuthCredential(credential)
+            signInWithPhoneAuthCredential(credential)
+        }catch (e:Exception){
+            Log.e("Exception => ", e.message.toString())
+        }
     }
 
     /**
